@@ -1,5 +1,5 @@
 import WelcomeKit from '@/app/components/welcome/WelcomeKit'
-import './styles/app.css'
+import './styles/CSS_sttyle/app.css'
 
 export default function App() {
   return <WelcomeKit />
