@@ -1,0 +1,77 @@
+.window-frame {
+  display: flex;
+  flex-direction: column;
+  user-select: none;
+  background-color: var(--window-c-background);
+  transition: background-color var(--window-background-transition-duration) ease;
+}
+
+// .window-titlebar {
+//   display: flex;
+//   position: relative;
+//   height: var(--window-titlebar-height);
+//   align-items: center;
+//   -webkit-app-region: drag;
+//   background-color: var(--window-c-titlebar-background);
+//   color: var(--window-c-text);
+//   transition: background-color var(--window-background-transition-duration) ease;
+//   top: 10 px;
+// }
+
+.window-content {
+     flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+  position: relative;
+}
+
+// .window-titlebar-icon {
+//   position: absolute;
+//   left: 10;
+//   top: 0;
+//   width: var(--window-title-margin);
+//   height: 100%;
+//   padding: 0 10px;
+//   box-sizing: border-box;
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+// }
+
+.window-titlebar-icon img {
+  width: 100%;
+  max-width: 16px;
+}
+
+.window-titlebar-title {
+  text-align: left;
+  padding: 20;
+  margin: 10;
+  color: aliceblue;
+}
+
+
+
+.window-titlebar-controls {
+  display: flex;
+  position: absolute;
+  right:0;
+  top:0;
+//   -webkit-app-region: no-drag;
+}
+
+// .window-titlebar-menu {
+
+
+// }
+
+.titlebar-controlButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 30px;
+  cursor: pointer;
+  background-color: transparent;
+  color: aliceblue;
+}
