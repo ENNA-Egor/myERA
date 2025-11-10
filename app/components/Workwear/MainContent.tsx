@@ -1,7 +1,7 @@
 
 import React, {Component} from "react"
 
-import {ButtonsMenu} from './buttonMenu'
+import {ButtonsMenu, PanelesMenu} from './buttonMenuEndPfneles'
 // import {userData} from './Data'
 
 
@@ -40,7 +40,9 @@ class MainContent extends Component {
         <div className="levtMenu">
            <ButtonsMenu />
         </div>
-        <div className="mainWindow"></div>
+        <div className="mainWindow">
+           <PanelesMenu/>
+        </div>
       </div>
     //   <div className="NewComp" style={{margin: '10px',width: '100%', height: '80vh'}}>
     //     <h1> New element in ElectronReactApp</h1>

@@ -14,3 +14,16 @@ export const ButtonsMenu = () =>{
 
     )
 }
+
+export const PanelesMenu = () =>{
+    return (
+        <div className="panelesMeny">
+            <div className=" panels activePanel"> Главный </div>
+            <div className="panels"> Полный список </div>
+            <div className="panels"> Личная карточка </div>
+            <div className="panels"> Остатки </div>
+            <div className="panels"> Приход </div>
+        </div>
+
+    )
+}
