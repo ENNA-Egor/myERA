@@ -77,14 +77,37 @@ a:not([class]) {
   height: 85vh;
 }
 
+.mainWindow {
+  background-color: rgba(255, 0, 234, 0.13);
+  width: 90%;
+  height: 89vh;
+}
+
 .levtMenu {
   background-color: rgba(0, 255, 255, 0.137);
   width: 10%;
   height: 89vh;
 }
 
-.mainWindow {
-  background-color: rgba(255, 0, 234, 0.13);
-  width: 90%;
-  height: 89vh;
+.mainMenyBtn {
+  display: flex;
+  flex-direction: column;
+}
+
+.btnMenu {
+  color: antiquewhite;
+  background-color: rgb(70, 70, 70);
+}
+
+.active {
+  background-color: rgb(44, 44, 44);
+  color: rgb(61, 253, 173);
+}
+
+.allBtn {
+  padding: 2px;
+  margin: 5px;
+  font-size: 15px;
+  cursor: pointer;
+  border-radius: 5px;
 }

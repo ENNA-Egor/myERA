@@ -1,6 +1,8 @@
 
 import React, {Component} from "react"
-import {userData} from './Data'
+
+import {ButtonsMenu} from './buttonMenu'
+// import {userData} from './Data'
 
 
 
@@ -35,7 +37,9 @@ class MainContent extends Component {
 
     return (
       <div className="body">
-        <div className="levtMenu"></div>
+        <div className="levtMenu">
+           <ButtonsMenu />
+        </div>
         <div className="mainWindow"></div>
       </div>
     //   <div className="NewComp" style={{margin: '10px',width: '100%', height: '80vh'}}>
