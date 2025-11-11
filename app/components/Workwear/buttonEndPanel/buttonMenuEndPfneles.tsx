@@ -4,16 +4,22 @@ import React, {useEffect, useState} from "react"
 
 
 export const ButtonsMenu = () =>{
-    const [idActiv, setIdActiv] = useState(true);
     
+    const [idActiv, setIdActiv] = useState(true);
     const selectBtn =(e)=> {
         setIdActiv( !idActiv);
-        console.log (idActiv, e.target.id);
-        
+        // console.log (idActiv, e.target.id);
+        const elements = document.querySelectorAll('.btnMenu');
+        // console.log (elements);
+        elements.forEach((element)=> {
+            // console.log(element.id)
+            // console.log(e.target.id)
+            e.target.id === element.id ? (element.classList.add("active")) : (element.classList.remove("active"))
+        })  
     }
     return (
         <div className="mainMenyBtn">
-            <button id= "1" onClick={selectBtn} className={`btnMenu allBtn ${idActiv ? 'active' : ''}`}> Главный </button>
+            <button id= "1" onClick={selectBtn} className={"btnMenu allBtn active"}> Главный </button>
             <button id= "2" onClick={selectBtn} className="btnMenu allBtn"> Полный список </button>
             <button id= "3" onClick={selectBtn}  className="btnMenu allBtn"> Личная карточка </button>
             <button id= "4" onClick={selectBtn} className="btnMenu allBtn"> Остатки </button>
