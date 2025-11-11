@@ -5,17 +5,23 @@ import React, {useEffect, useState} from "react"
 
 export const ButtonsMenu = () =>{
     
-    const [idActiv, setIdActiv] = useState(true);
+    const [idActiv, setIdActiv] = useState(1);
     const selectBtn =(e)=> {
-        setIdActiv( !idActiv);
+        setIdActiv(e.target.id);
         // console.log (idActiv, e.target.id);
-        const elements = document.querySelectorAll('.btnMenu');
-        // console.log (elements);
-        elements.forEach((element)=> {
+        const tab_elements = document.querySelectorAll('.btnMenu');
+        const contents = document.querySelectorAll('.panels');
+        tab_elements.forEach((element)=> {
             // console.log(element.id)
             // console.log(e.target.id)
             e.target.id === element.id ? (element.classList.add("active")) : (element.classList.remove("active"))
         })  
+        contents.forEach((content_element)=> {
+            console.log(content_element.id)
+            console.log(e.target.id)
+            e.target.id === content_element.id ? (content_element.classList.add("activePanel")) : (content_element.classList.remove("activePanel"))
+        })  
+        console.log (idActiv);
     }
     return (
         <div className="body">
@@ -30,11 +36,11 @@ export const ButtonsMenu = () =>{
             </div>
             <div className="mainWindow">
                 <div className="panelesMeny">
-                    <div className=" panels activePanel"> Главный </div>
-                    <div className="panels"> Полный список </div>
-                    <div className="panels"> Личная карточка </div>
-                    <div className="panels"> Остатки </div>
-                    <div className="panels"> Приход </div>
+                    <div id= "1" className=" panels activePanel"> Главный </div>
+                    <div id= "1" className="panels"> Полный список </div>
+                    <div id= "1" className="panels"> Личная карточка </div>
+                    <div id= "1" className="panels"> Остатки </div>
+                    <div id= "1" className="panels"> Приход </div>
                 </div>
             </div>
         </div>
