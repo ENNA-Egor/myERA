@@ -1,9 +1,14 @@
 import React from "react"
 
+import {MainPanel} from '../Paneles/mainPanel'
+import {FulListPanel} from '../Paneles/FulListPanel'
+import {PersonalCard} from '../Paneles/PersonalCard'
+import {Leftovers} from '../Paneles/Leftovers'
+import {Coming} from '../Paneles/Coming'
 
 
 
-export const ButtonsMenu = () =>{
+export const BodyContent = () =>{
     
     const selectBtn =(e)=> {
         const tab_elements = document.querySelectorAll('.btnMenu');
@@ -29,11 +34,21 @@ export const ButtonsMenu = () =>{
             </div>
             <div className="mainWindow">
                 <div className="panelesMeny">
-                    <div id= "1" className=" panels activePanel"> Главный </div>
-                    <div id= "2" className="panels"> Полный список </div>
-                    <div id= "3" className="panels"> Личная карточка </div>
-                    <div id= "4" className="panels"> Остатки </div>
-                    <div id= "5" className="panels"> Приход </div>
+                    <div id= "1" className=" panels activePanel"> 
+                        <MainPanel/> 
+                    </div>
+                    <div id= "2" className="panels">
+                        <FulListPanel/>
+                    </div>
+                    <div id= "3" className="panels">
+                        <PersonalCard/>
+                    </div>
+                    <div id= "4" className="panels">
+                        <Leftovers/>
+                    </div>
+                    <div id= "5" className="panels">
+                        <Coming/>
+                    </div>
                 </div>
             </div>
         </div>
@@ -41,15 +56,3 @@ export const ButtonsMenu = () =>{
     )
 }
 
-// export const PanelesMenu = () =>{
-//     return (
-//         <div className="panelesMeny">
-//             <div className=" panels activePanel"> Главный </div>
-//             <div className="panels"> Полный список </div>
-//             <div className="panels"> Личная карточка </div>
-//             <div className="panels"> Остатки </div>
-//             <div className="panels"> Приход </div>
-//         </div>
-
-//     )
-// }

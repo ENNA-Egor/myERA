@@ -1,7 +1,7 @@
 
 import React, {Component} from "react"
 
-import {ButtonsMenu} from './buttonMenuEndPfneles'
+import { BodyContent} from './buttonMenuEndPfneles'
 // import {userData} from './Data'
 
 
@@ -37,26 +37,9 @@ class MainContent extends Component {
 
     return (
       <div>
-        {/* <div className="levtMenu"> */}
-           <ButtonsMenu />
-        {/* </div> */}
-        {/* <div className="mainWindow"> */}
-           {/* <PanelesMenu/> */}
-        {/* </div> */}
+           < BodyContent />
        </div>
-    //   <div className="NewComp" style={{margin: '10px',width: '100%', height: '80vh'}}>
-    //     <h1> New element in ElectronReactApp</h1>
-    //     <button className="btn" onClick={this.increment}>Inc</button>
-    //     <button className="btn" onClick={this.decrement}>Dec</button>
-    //     <button className="btn" onClick={this.reset}>Res</button>
-    //     <h1>{`Значение коунтера: ${this.state.count}`}</h1>
-    //     <ul>
-    //   {userData.map(item => (
-    //     <li key={item.id}>{item.name}: --{item.value}--{item.name}</li>
-    //   ))}
-    // </ul>
- 
-    //   </div>
+  
     )
 
   }
