@@ -1,6 +1,6 @@
 import React from "react"
 
-import {MainPanel} from '../Paneles/mainPanel'
+import {MainPanel} from '../Paneles/MainPanel/MainPanel'
 import {FulListPanel} from '../Paneles/FulListPanel'
 import {PersonalCard} from '../Paneles/PersonalCard'
 import {Leftovers} from '../Paneles/Leftovers'

@@ -1,5 +1,4 @@
-
-export const MainPanel =() => {
+export const UserData =() => {
 
     return (
         <div>
@@ -11,4 +10,3 @@ export const MainPanel =() => {
         </div>
     )
 }
-
