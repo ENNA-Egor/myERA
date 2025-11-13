@@ -38,7 +38,7 @@ export const BodyContent = () =>{
                     <div id= "1" className=" panels activePanel"> 
                         <MainPanel/>          
                     </div>
-                    <div className="modalMain ">
+                    <div className="modalMain">
                         <ModalPanel/>
                     </div>
                     <div id= "2" className="panels">

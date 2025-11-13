@@ -1,6 +1,7 @@
 .panelesMeny{
     display: flex;
     flex-direction:row;
+    position: relative;
 }
 
 
@@ -26,5 +27,7 @@
 
 .modalMainActive{
    display: block;
+   left: 250px;
+   top: 100px;
    position: absolute; 
 }

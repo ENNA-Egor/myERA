@@ -115,6 +115,7 @@ a:not([class]) {
 .panelesMeny {
   display: flex;
   flex-direction: row;
+  position: relative;
 }
 
 .panels {
@@ -140,5 +141,7 @@ a:not([class]) {
 
 .modalMainActive {
   display: block;
+  left: 250px;
+  top: 100px;
   position: absolute;
 }
