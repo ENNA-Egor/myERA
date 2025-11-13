@@ -130,3 +130,15 @@ a:not([class]) {
   color: rgb(61, 253, 173);
   display: block;
 }
+
+.modalMain {
+  width: 550px;
+  height: 500px;
+  background-color: rgb(97, 48, 48);
+  display: none;
+}
+
+.modalMainActive {
+  display: block;
+  position: absolute;
+}
