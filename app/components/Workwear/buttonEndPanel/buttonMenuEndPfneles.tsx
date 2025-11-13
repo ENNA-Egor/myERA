@@ -1,6 +1,7 @@
 import React from "react"
 
 import {MainPanel} from '../Paneles/MainPanel/MainPanel'
+import {ModalPanel} from '../Paneles/MainPanel/ModalPanel'
 import {FulListPanel} from '../Paneles/FulListPanel'
 import {PersonalCard} from '../Paneles/PersonalCard'
 import {Leftovers} from '../Paneles/Leftovers'
@@ -27,7 +28,7 @@ export const BodyContent = () =>{
                 <div className="mainMenyBtn">
                     <button id= "1" onClick={selectBtn} className={"btnMenu allBtn active"}> Главный </button>
                     <button id= "2" onClick={selectBtn} className="btnMenu allBtn"> Полный список </button>
-                    <button id= "3" onClick={selectBtn}  className="btnMenu allBtn"> Личная карточка </button>
+                    <button id= "3" onClick={selectBtn}  className="btnMenu allBtn"> Новая карточка </button>
                     <button id= "4" onClick={selectBtn} className="btnMenu allBtn"> Остатки </button>
                     <button id= "5" onClick={selectBtn} className="btnMenu allBtn"> Приход </button>
                 </div>
@@ -35,7 +36,10 @@ export const BodyContent = () =>{
             <div className="mainWindow">
                 <div className="panelesMeny">
                     <div id= "1" className=" panels activePanel"> 
-                        <MainPanel/> 
+                        <MainPanel/>          
+                    </div>
+                    <div className="modaMain">
+                        <ModalPanel/>
                     </div>
                     <div id= "2" className="panels">
                         <FulListPanel/>
