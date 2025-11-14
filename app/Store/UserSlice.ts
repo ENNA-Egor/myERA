@@ -12,7 +12,7 @@ const initialState = {
 ]}
 
 export const userSlice = createSlice({
-  name: 'counter',
+  name: '@@users',
   initialState,
   reducers: {
     addUser: (state) => {
@@ -27,4 +27,4 @@ export const userSlice = createSlice({
 // Action creators are generated for each case reducer function
 export const { addUser, removeUser} = userSlice.actions
 
-export default userSlice.reducer
+export const userReduser =userSlice.reducer
