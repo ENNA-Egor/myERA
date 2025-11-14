@@ -1,23 +1,19 @@
 // src/components/ButtonCls.tsx
 import React from 'react';
-import { useDispatch } from 'react-redux';
-import { AppDispatch } from '../../../../Store/store'; // Импортируем тип AppDispatch
-import { toggleModal } from '../../../../Store/ModalSlice'; // Импортируем action
 
-import './ButtonCls.css'; // Ваши стили
+export const ModalPanel =() => {
 
-function ModalPanel() {
-  const dispatch = useDispatch<AppDispatch>(); // Получаем dispatch с правильным типом
 
-  const handleClick = () => {
-    dispatch(toggleModal()); // Отправляем action для переключения модального окна
-  };
+    // const closePanel=()=>{
+    //     const contentsModal = document.getElementsByClassName('.modalMain');
+    //     contentsModal.classList.remove();
+        
+    // }
 
-  return (
-    <button className="btnCls" onClick={handleClick}>
-      Переключить модальное окно
-    </button>
-  );
+    return (
+    <div >
+        <h2>Лична карточка </h2>
+        <button name="btnCls">Закрыть</button>
+    </div>
+    )
 }
-
-export default ModalPanel;
