@@ -22,6 +22,13 @@ export const BodyContent = () =>{
             e.target.id === content_element.id ? (content_element.classList.add("activePanel")) : (content_element.classList.remove("activePanel"))
         })  
     }
+
+    //   const closePanel=()=>{
+    //     const contentsModal = document.querySelectorAll('.modalMain');
+    //     contentsModal.classList.remove();
+        
+    // }
+
     return (
         <div className="body">
             <div className="levtMenu">
