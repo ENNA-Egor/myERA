@@ -23,11 +23,11 @@ export const BodyContent = () =>{
         })  
     }
 
-    //   const closePanel=()=>{
-    //     const contentsModal = document.querySelectorAll('.modalMain');
-    //     contentsModal.classList.remove();
+      const addModalPanel=()=>{
+        const contentsModal = document.getElementById('modalMain') as HTMLElement;
+        contentsModal.classList.add('.modalMainActive');
         
-    // }
+    }
 
     return (
         <div className="body">
@@ -45,7 +45,7 @@ export const BodyContent = () =>{
                     <div id= "1" className=" panels activePanel"> 
                         <MainPanel/>          
                     </div>
-                    <div className="modalMain">
+                    <div id="modalMain" className="modalMain">
                         <ModalPanel/>
                     </div>
                     <div id= "2" className="panels">

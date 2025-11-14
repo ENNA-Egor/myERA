@@ -4,7 +4,7 @@ import React from "react";
 export const ModalPanel =() => {
 
     // const closePanel=()=>{
-    //     const contentsModal = document.querySelectorAll('.modalMain');
+    //     const contentsModal = document.getElementsByClassName('.modalMain');
     //     contentsModal.classList.remove();
         
     // }
@@ -12,7 +12,7 @@ export const ModalPanel =() => {
     return (
     <div >
         <h2>Лична карточка </h2>
-        <button>Закрыть</button>
+        <button name="btnCls">Закрыть</button>
     </div>
     )
 }
