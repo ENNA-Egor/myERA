@@ -9,32 +9,34 @@ const initialUsers = [
     { id: 4, surname: 'Бобров', first_name: 'Семён', patronymic: 'Николаевич' },
     { id: 5, surname: 'Мишин', first_name: 'Василий', patronymic: 'Олегович' },
     { id: 6, surname: 'Володин', first_name: 'Сидор', patronymic: 'Ефимович' },
+    { id: 7, surname: 'Сидоров', first_name: 'Михаил', patronymic: 'Викторович' },
   ];
 
   const [users] = useState(initialUsers);
   const [searchTerm, setSearchTerm] = useState('');
   // --- НОВОЕ СОСТОЯНИЕ для сообщения о клике ---
-  const [selectedUserMessage, setSelectedUserMessage] = useState(null);
+  const [selectedUserMessage, setSelectedUserMessage] = useState('');
 
   const handleSearchChange = (event) => {
     setSearchTerm(event.target.value);
-    setSelectedUserMessage(null); // Сбрасываем сообщение при начале нового поиска
+    setSelectedUserMessage(''); // Сбрасываем сообщение при начале нового поиска
   };
 
   const filteredUsers = searchTerm
     ? users.filter((user) => {
         const searchLower = searchTerm.toLowerCase();
         const surnameLower = user.surname.toLowerCase();
-        const firstNameLower = user.first_name.toLowerCase();
+        // const firstNameLower = user.first_name.toLowerCase();
 
-        return surnameLower.includes(searchLower) || firstNameLower.includes(searchLower);
+        // return surnameLower.includes(searchLower) || firstNameLower.includes(searchLower);
+        return surnameLower.includes(searchLower);
       })
     : [];
 
   const handleSurnameClick = (user) => {
     console.log('Кликнули по пользователю:', user);
     // --- ИСПОЛЬЗУЕМ СОСТОЯНИЕ ВМЕСТО ALERT ---
-    // setSelectedUserMessage(`Выбран пользователь: ${user.surname} ${user.first_name} (ID: ${user.id})`);
+    setSelectedUserMessage(`Выбран пользователь: ${user.surname} ${user.first_name} (ID: ${user.id})`);
     // Опционально: можно сбросить сообщение через несколько секунд
     // setTimeout(() => setSelectedUserMessage(null), 5000);
   };
