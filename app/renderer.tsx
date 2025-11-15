@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom/client'
 import { WindowContextProvider, menuItems } from '@/app/components/window'
 import { ErrorBoundary } from './components/ErrorBoundary'
 import App from './app'
-import { store } from './Store/store'
+import { store } from './Store/UserSlice'
 import { Provider } from 'react-redux'
 
 ReactDOM.createRoot(document.getElementById('app') as HTMLElement).render(

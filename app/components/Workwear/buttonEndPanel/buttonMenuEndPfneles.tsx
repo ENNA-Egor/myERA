@@ -23,11 +23,11 @@ export const BodyContent = () =>{
         })  
     }
 
-      const addModalPanel=()=>{
-        const contentsModal = document.getElementById('modalMain') as HTMLElement;
-        contentsModal.classList.add('.modalMainActive');
+    //   const addModalPanel=(e)=>{
+    //     const contentsModal = document.getElementById('clickable-surname') as HTMLElement;
+    //     contentsModal.classList.add('.modalMainActive');
         
-    }
+    // }
 
     return (
         <div className="body">

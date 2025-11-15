@@ -1,7 +1,12 @@
 import React, { useState } from 'react';
+import{useDispatch} from 'react-redux'
+import {toggleModal} from '../../../../Store/UserSlice'
 // import './App.css'; // Для стилей таблицы и формы поиска
 
 export const MainPanel=() =>{
+
+  const dispatch = useDispatch();
+
 const initialUsers = [
     { id: 1, surname: 'Иванов', first_name: 'Владимир', patronymic: 'Петрович' },
     { id: 2, surname: 'Петров', first_name: 'Иван', patronymic: 'Сидорович' },
@@ -19,7 +24,8 @@ const initialUsers = [
 
   const handleSearchChange = (event) => {
     setSearchTerm(event.target.value);
-    setSelectedUserMessage(''); // Сбрасываем сообщение при начале нового поиска
+    dispatch(toggleModal())
+    console.log ('gadgh')
   };
 
   const filteredUsers = searchTerm
