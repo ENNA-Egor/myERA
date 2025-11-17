@@ -1,22 +1,23 @@
 import React, { useState} from 'react';
-import { useDispatch} from 'react-redux'
+import { useDispatch, useSelector} from 'react-redux'
 import { toggleModal } from '../../../../Store/Slice/ModalWindowSlice'
+import {RootState} from '../../../../Store/store'
 
 export const MainPanel = () => {
 
   const dispatch = useDispatch();
-  // const vizVindows = useSelector((state:RootState)=> state.modal)
+  const initialUsers = useSelector((state:RootState)=> state.user)
 
 
-  const initialUsers = [
-    { id: 1, surname: 'Иванов', first_name: 'Владимир', patronymic: 'Петрович' },
-    { id: 2, surname: 'Петров', first_name: 'Иван', patronymic: 'Сидорович' },
-    { id: 3, surname: 'Сидоров', first_name: 'Юрий', patronymic: 'Викторович' },
-    { id: 4, surname: 'Бобров', first_name: 'Семён', patronymic: 'Николаевич' },
-    { id: 5, surname: 'Мишин', first_name: 'Василий', patronymic: 'Олегович' },
-    { id: 6, surname: 'Володин', first_name: 'Сидор', patronymic: 'Ефимович' },
-    { id: 7, surname: 'Сидоров', first_name: 'Михаил', patronymic: 'Викторович' },
-  ];
+  // const initialUsers = [
+  //   { id: 1, surname: 'Иванов', first_name: 'Владимир', patronymic: 'Петрович' },
+  //   { id: 2, surname: 'Петров', first_name: 'Иван', patronymic: 'Сидорович' },
+  //   { id: 3, surname: 'Сидоров', first_name: 'Юрий', patronymic: 'Викторович' },
+  //   { id: 4, surname: 'Бобров', first_name: 'Семён', patronymic: 'Николаевич' },
+  //   { id: 5, surname: 'Мишин', first_name: 'Василий', patronymic: 'Олегович' },
+  //   { id: 6, surname: 'Володин', first_name: 'Сидор', patronymic: 'Ефимович' },
+  //   { id: 7, surname: 'Сидоров', first_name: 'Михаил', patronymic: 'Викторович' },
+  // ];
 
   const [users] = useState(initialUsers);
   const [searchTerm, setSearchTerm] = useState('');
