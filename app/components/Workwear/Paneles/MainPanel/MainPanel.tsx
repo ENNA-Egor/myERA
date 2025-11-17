@@ -1,13 +1,11 @@
 import React, { useState} from 'react';
-import {RootState} from '../../../../Store/store'
-import { useDispatch, useSelector } from 'react-redux'
+import { useDispatch} from 'react-redux'
 import { toggleModal } from '../../../../Store/Slice/ModalWindowSlice'
-// import './App.css'; // Для стилей таблицы и формы поиска
 
 export const MainPanel = () => {
 
   const dispatch = useDispatch();
-  const vizVindows = useSelector((state:RootState)=> state.modal)
+  // const vizVindows = useSelector((state:RootState)=> state.modal)
 
 
   const initialUsers = [

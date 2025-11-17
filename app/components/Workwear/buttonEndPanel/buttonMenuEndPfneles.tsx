@@ -6,10 +6,16 @@ import {FulListPanel} from '../Paneles/FulListPanel'
 import {PersonalCard} from '../Paneles/PersonalCard'
 import {Leftovers} from '../Paneles/Leftovers'
 import {Coming} from '../Paneles/Coming'
+import {RootState} from '../../../Store/store'
+import { useSelector } from 'react-redux'
+// import { toggleModal } from '../../../../Store/Slice/ModalWindowSlice'
 
 
 
 export const BodyContent = () =>{
+
+     const isModalOpen = useSelector((state: RootState) => state.modal);
+      const modalClasses = `modalMain ${isModalOpen ? 'modalMainActive' : ''}`;
     
     const selectBtn =(e)=> {
         const tab_elements = document.querySelectorAll('.btnMenu');
@@ -23,11 +29,6 @@ export const BodyContent = () =>{
         })  
     }
 
-    //   const addModalPanel=(e)=>{
-    //     const contentsModal = document.getElementById('clickable-surname') as HTMLElement;
-    //     contentsModal.classList.add('.modalMainActive');
-        
-    // }
 
     return (
         <div className="body">
@@ -45,7 +46,7 @@ export const BodyContent = () =>{
                     <div id= "1" className=" panels activePanel"> 
                         <MainPanel/>          
                     </div>
-                    <div id="modalMain" className="modalMain">
+                    <div id="modalMain" className={modalClasses}>
                         <ModalPanel/>
                     </div>
                     <div id= "2" className="panels">
