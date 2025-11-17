@@ -10,7 +10,7 @@ interface ModalState {
 
 
 const ModalState = {
-  isVisible: false, // Начальное состояние: модальное окно закрыто
+  isVisible: false, 
   visibleID: 0,
 };
 
@@ -19,10 +19,11 @@ const toggleVisibleModal = createSlice({
   name: '@@toggle',
   initialState:ModalState,
   reducers: {
-    toggleModal:(state, id) => {
+    toggleModal:(state, action) => {
       // Здесь Immer работает, потому что state - это объект, и мы мутируем его свойство
        state.isVisible = ! state.isVisible; // <-- Мутируем свойство объекта
-       console.log (id)
+        state.visibleID = action.payload;
+       console.log (action.payload)
       //  state.visibleID = id
     },
     
