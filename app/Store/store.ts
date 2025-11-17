@@ -5,8 +5,11 @@ import modalReducer from './Slice/ModalWindowSlice'
 export const store = configureStore({
   reducer: {
     user: userReduser,
-    modal: modalReducer,
+     modal: modalReducer,
   },
 })
+
+export type RootState = ReturnType<typeof store.getState>;
+export type AppDispatch = typeof store.dispatch;
 
 

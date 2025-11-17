@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState} from 'react';
+import {RootState} from '../../../../Store/store'
 import { useDispatch, useSelector } from 'react-redux'
 import { toggleModal } from '../../../../Store/Slice/ModalWindowSlice'
 // import './App.css'; // Для стилей таблицы и формы поиска
@@ -6,7 +7,9 @@ import { toggleModal } from '../../../../Store/Slice/ModalWindowSlice'
 export const MainPanel = () => {
 
   const dispatch = useDispatch();
-  // const vizVindows = useSelector()
+  const vizVindows = useSelector((state:RootState)=> state.modal)
+    console.log ( vizVindows)
+
 
   const initialUsers = [
     { id: 1, surname: 'Иванов', first_name: 'Владимир', patronymic: 'Петрович' },
@@ -25,8 +28,8 @@ export const MainPanel = () => {
 
   const handleSearchChange = (event) => {
     setSearchTerm(event.target.value);
-    dispatch(toggleModal())
-    console.log('gadgh')
+    // dispatch(toggleModal())
+    // console.log('gadgh')
   };
 
   const filteredUsers = searchTerm
@@ -44,6 +47,8 @@ export const MainPanel = () => {
     console.log('Кликнули по пользователю:', user);
     // --- ИСПОЛЬЗУЕМ СОСТОЯНИЕ ВМЕСТО ALERT ---
     setSelectedUserMessage(`Выбран пользователь: ${user.surname} ${user.first_name} (ID: ${user.id})`);
+     dispatch(toggleModal())
+    console.log ( vizVindows)
     // Опционально: можно сбросить сообщение через несколько секунд
     // setTimeout(() => setSelectedUserMessage(null), 5000);
   };
