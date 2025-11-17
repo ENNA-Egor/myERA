@@ -4,16 +4,16 @@ import ReactDOM from 'react-dom/client'
 import { WindowContextProvider, menuItems } from '@/app/components/window'
 import { ErrorBoundary } from './components/ErrorBoundary'
 import App from './app'
-import { store } from './Store/UserSlice'
+import { store } from './Store/store'
 import { Provider } from 'react-redux'
 
 ReactDOM.createRoot(document.getElementById('app') as HTMLElement).render(
   <React.StrictMode>
     <ErrorBoundary>
       <WindowContextProvider titlebar={{ title: 'ZSS Accounting for workwear', menuItems }}>
-         <Provider store={store}>
-            <App />
-         </Provider>
+        <Provider store={store}>
+          <App />
+        </Provider>
       </WindowContextProvider>
     </ErrorBoundary>
   </React.StrictMode>

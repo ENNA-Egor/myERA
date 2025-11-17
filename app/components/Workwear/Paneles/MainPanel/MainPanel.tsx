@@ -1,13 +1,14 @@
 import React, { useState } from 'react';
-import{useDispatch} from 'react-redux'
-import {toggleModal} from '../../../../Store/UserSlice'
+import { useDispatch, useSelector } from 'react-redux'
+import { toggleModal } from '../../../../Store/Slice/ModalWindowSlice'
 // import './App.css'; // Для стилей таблицы и формы поиска
 
-export const MainPanel=() =>{
+export const MainPanel = () => {
 
   const dispatch = useDispatch();
+  // const vizVindows = useSelector()
 
-const initialUsers = [
+  const initialUsers = [
     { id: 1, surname: 'Иванов', first_name: 'Владимир', patronymic: 'Петрович' },
     { id: 2, surname: 'Петров', first_name: 'Иван', patronymic: 'Сидорович' },
     { id: 3, surname: 'Сидоров', first_name: 'Юрий', patronymic: 'Викторович' },
@@ -25,18 +26,18 @@ const initialUsers = [
   const handleSearchChange = (event) => {
     setSearchTerm(event.target.value);
     dispatch(toggleModal())
-    console.log ('gadgh')
+    console.log('gadgh')
   };
 
   const filteredUsers = searchTerm
     ? users.filter((user) => {
-        const searchLower = searchTerm.toLowerCase();
-        const surnameLower = user.surname.toLowerCase();
-        // const firstNameLower = user.first_name.toLowerCase();
+      const searchLower = searchTerm.toLowerCase();
+      const surnameLower = user.surname.toLowerCase();
+      // const firstNameLower = user.first_name.toLowerCase();
 
-        // return surnameLower.includes(searchLower) || firstNameLower.includes(searchLower);
-        return surnameLower.includes(searchLower);
-      })
+      // return surnameLower.includes(searchLower) || firstNameLower.includes(searchLower);
+      return surnameLower.includes(searchLower);
+    })
     : [];
 
   const handleSurnameClick = (user) => {
