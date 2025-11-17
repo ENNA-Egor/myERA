@@ -14,7 +14,7 @@ import { useSelector } from 'react-redux'
 
 export const BodyContent = () =>{
 
-     const isModalOpen = useSelector((state: RootState) => state.modal);
+     const isModalOpen = useSelector((state: RootState) => state.modal.isVisible);
       const modalClasses = `modalMain ${isModalOpen ? 'modalMainActive' : ''}`;
     
     const selectBtn =(e)=> {
