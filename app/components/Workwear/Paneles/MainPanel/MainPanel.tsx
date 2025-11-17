@@ -44,7 +44,7 @@ export const MainPanel = () => {
     console.log('Кликнули по пользователю:', user);
     // --- ИСПОЛЬЗУЕМ СОСТОЯНИЕ ВМЕСТО ALERT ---
     setSelectedUserMessage(`Выбран пользователь: ${user.surname} ${user.first_name} (ID: ${user.id})`);
-     dispatch(toggleModal())
+     dispatch(toggleModal(user.id))
     // Опционально: можно сбросить сообщение через несколько секунд
     // setTimeout(() => setSelectedUserMessage(null), 5000);
   };
