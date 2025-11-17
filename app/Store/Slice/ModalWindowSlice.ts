@@ -23,6 +23,7 @@ const toggleVisibleModal = createSlice({
       // Здесь Immer работает, потому что state - это объект, и мы мутируем его свойство
        state.isVisible = ! state.isVisible; // <-- Мутируем свойство объекта
        console.log (id)
+      //  state.visibleID = id
     },
     
   }
