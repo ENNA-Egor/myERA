@@ -6,7 +6,7 @@ import {RootState} from '../../../../Store/store'
 export const MainPanel = () => {
 
   const dispatch = useDispatch();
-  const initialUsers = useSelector((state:RootState)=> state.user)
+  const initialUsers = useSelector((state:RootState)=> state.users)
 
 
   // const initialUsers = [

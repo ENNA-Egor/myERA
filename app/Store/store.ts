@@ -4,7 +4,7 @@ import modalReducer from './Slice/ModalWindowSlice'
 
 export const store = configureStore({
   reducer: {
-    user: userReduser,
+    users: userReduser,
      modal: modalReducer,
   },
 })
