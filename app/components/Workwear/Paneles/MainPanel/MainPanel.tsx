@@ -9,15 +9,7 @@ export const MainPanel = () => {
   const initialUsers = useSelector((state:RootState)=> state.users)
 
 
-  // const initialUsers = [
-  //   { id: 1, surname: 'Иванов', first_name: 'Владимир', patronymic: 'Петрович' },
-  //   { id: 2, surname: 'Петров', first_name: 'Иван', patronymic: 'Сидорович' },
-  //   { id: 3, surname: 'Сидоров', first_name: 'Юрий', patronymic: 'Викторович' },
-  //   { id: 4, surname: 'Бобров', first_name: 'Семён', patronymic: 'Николаевич' },
-  //   { id: 5, surname: 'Мишин', first_name: 'Василий', patronymic: 'Олегович' },
-  //   { id: 6, surname: 'Володин', first_name: 'Сидор', patronymic: 'Ефимович' },
-  //   { id: 7, surname: 'Сидоров', first_name: 'Михаил', patronymic: 'Викторович' },
-  // ];
+
 
   const [users] = useState(initialUsers);
   const [searchTerm, setSearchTerm] = useState('');
@@ -26,8 +18,6 @@ export const MainPanel = () => {
 
   const handleSearchChange = (event) => {
     setSearchTerm(event.target.value);
-    // dispatch(toggleModal())
-    // console.log('gadgh')
   };
 
   const filteredUsers = searchTerm

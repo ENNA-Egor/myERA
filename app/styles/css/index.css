@@ -143,3 +143,28 @@ a:not([class]) {
   display: block;
   position: absolute;
 }
+
+.persCard {
+  position: relative;
+}
+
+.persCardBlok {
+  display: flex;
+  flex-direction: row;
+}
+
+.persCardData {
+  display: flex;
+  flex-direction: column;
+}
+
+.inputCard {
+  width: 300px;
+}
+
+.personInput {
+  position: absolute;
+  color: aqua;
+  top: -1px;
+  right: 10px;
+}
