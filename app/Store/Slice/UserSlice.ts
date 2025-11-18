@@ -1,5 +1,13 @@
 
-import { createSlice} from '@reduxjs/toolkit'
+import { createSlice, nanoid} from '@reduxjs/toolkit'
+
+interface valueUser {
+  id: string; // nanoid возвращает строку
+  surname: string;
+  first_name: string;
+  patronymic: string;
+  profession: string;
+}
 
 const valueUser =  [
     { id: 1, surname: 'Иванов', first_name: 'Владимир', patronymic: 'Петрович', profession:'Рабочий' },
@@ -15,8 +23,20 @@ const userSlice = createSlice({
   name: '@@users',
   initialState: valueUser,
   reducers: {
-    addUser: (state, action) => {
-      state.push(action.payload)
+    addUser: {
+      reducer: (state, action) => {
+        state.push(action.payload)
+      },
+      // @ts-ignore
+      prepare: (surname, first_name, patronymic, profession) => ({
+        payload: {
+          surname,
+          first_name,
+          patronymic,
+          profession,
+          id: nanoid()
+        }
+      })
     },
     removeUser: (state, action) => {
       state.push(action.payload)
