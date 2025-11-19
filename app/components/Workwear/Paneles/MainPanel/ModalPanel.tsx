@@ -7,18 +7,20 @@ import { toggleModal } from '../../../../Store/Slice/ModalWindowSlice'
 export const ModalPanel =() => {
      const selectId = useSelector((state: RootState) => state.modal.visibleID);
      const selectUserAll = useSelector((state: RootState) => state.users);
-     console.log (selectUserAll)
       const selectedUsers = selectUserAll.find(user => user.id === selectId);
-      console.log ( selectedUsers?.patronymic)
      const dispatch = useDispatch();
      const handleClickModal =()=> {
            dispatch(toggleModal(0))
      }
 
+
      return (
     <div >
         <h2>Лична карточка </h2>
-        <h1>{selectId}</h1>
+        <div className='titleFIO'>
+          <h2>{selectedUsers?.surname }</h2>
+          <h2>{selectedUsers?.first_name }</h2>
+        </div>
           <table className="user-table">
             <thead>
               <tr>

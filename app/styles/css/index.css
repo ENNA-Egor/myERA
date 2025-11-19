@@ -144,6 +144,15 @@ a:not([class]) {
   position: absolute;
 }
 
+.titleFIO {
+  display: flex;
+  flex-direction: row;
+}
+
+h2 {
+  margin-left: 5px;
+}
+
 .persCard {
   position: relative;
 }

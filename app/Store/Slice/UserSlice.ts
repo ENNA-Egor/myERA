@@ -28,12 +28,12 @@ const userSlice = createSlice({
         state.push(action.payload)
       },
       // @ts-ignore
-      prepare: (surname, first_name, patronymic, profession) => ({
+      prepare: (user) => ({
         payload: {
-          surname,
-          first_name,
-          patronymic,
-          profession,
+          surname: user.surname,
+          first_name: user.first_name,
+          patronymic: user.patronymic,
+          profession: user.profession,
           id: nanoid()
         }
       })

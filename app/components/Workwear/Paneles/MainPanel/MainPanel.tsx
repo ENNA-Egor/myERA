@@ -1,4 +1,4 @@
-import React, { useState} from 'react';
+import React, { useState, useEffect} from 'react';
 import { useDispatch, useSelector} from 'react-redux'
 import { toggleModal } from '../../../../Store/Slice/ModalWindowSlice'
 import {RootState} from '../../../../Store/store'
@@ -9,9 +9,12 @@ export const MainPanel = () => {
   const initialUsers = useSelector((state:RootState)=> state.users)
 
 
-
-
-  const [users] = useState(initialUsers);
+  
+ useEffect(() => {
+    setUsers(initialUsers);
+  }, [initialUsers]);
+    
+  const [users, setUsers] = useState(initialUsers);
   const [searchTerm, setSearchTerm] = useState('');
   // --- НОВОЕ СОСТОЯНИЕ для сообщения о клике ---
   const [selectedUserMessage, setSelectedUserMessage] = useState('');
@@ -34,7 +37,8 @@ export const MainPanel = () => {
   const handleSurnameClick = (user) => {
     console.log('Кликнули по пользователю:', user);
     // --- ИСПОЛЬЗУЕМ СОСТОЯНИЕ ВМЕСТО ALERT ---
-    setSelectedUserMessage(`Выбран пользователь: ${user.surname} ${user.first_name} (ID: ${user.id})`);
+    // setSelectedUserMessage(`Выбран пользователь: ${user.surname} ${user.first_name} (ID: ${user.id})`);
+    setSelectedUserMessage(`Выбран пользователь: ${user.surname} ${user.first_name}`);
      dispatch(toggleModal(user.id))
     // Опционально: можно сбросить сообщение через несколько секунд
     // setTimeout(() => setSelectedUserMessage(null), 5000);
@@ -66,7 +70,7 @@ export const MainPanel = () => {
           <table className="user-table">
             <thead>
               <tr>
-                <th>ID</th>
+                {/* <th>ID</th> */}
                 <th>Фамилия</th>
                 <th>Имя</th>
                 <th>Отчество</th>
@@ -75,7 +79,7 @@ export const MainPanel = () => {
             <tbody>
               {filteredUsers.map((user) => (
                 <tr key={user.id}>
-                  <td>{user.id}</td>
+                  {/* <td>{user.id}</td> */}
                   <td>
                     <span
                       className="clickable-surname"
