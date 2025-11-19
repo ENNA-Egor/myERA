@@ -35,7 +35,7 @@ export const MainPanel = () => {
     : [];
 
   const handleSurnameClick = (user) => {
-    console.log('Кликнули по пользователю:', user);
+    // console.log('Кликнули по пользователю:', user);
     // --- ИСПОЛЬЗУЕМ СОСТОЯНИЕ ВМЕСТО ALERT ---
     // setSelectedUserMessage(`Выбран пользователь: ${user.surname} ${user.first_name} (ID: ${user.id})`);
     setSelectedUserMessage(`Выбран пользователь: ${user.surname} ${user.first_name}`);

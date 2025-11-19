@@ -43,7 +43,7 @@ export const ModalPanel =() => {
                 </tr>
             </tbody>
           </table> 
-        <button name="btnCls" onClick={handleClickModal}>Закрыть</button>
+        <button name="btnCls" className='allBtn btnMenu' onClick={handleClickModal}>Закрыть</button>
     </div>
     )
 }
