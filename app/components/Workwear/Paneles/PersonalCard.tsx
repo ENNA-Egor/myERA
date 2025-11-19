@@ -1,7 +1,6 @@
 
 import React, {useState} from "react";
-// import {RootState} from '../../../Store/store'
-import { useDispatch, useSelector} from 'react-redux'
+import { useDispatch} from 'react-redux'
 import {addUser } from '../../../Store/Slice/UserSlice'
 
 
@@ -24,7 +23,6 @@ export const PersonalCard =() => {
     }
 
     const dispatch = useDispatch();
-    // const selectUserAll = useSelector((state: RootState) => state.users);
 
     const handleSubmit = (event) => {
         dispatch(addUser(user))
