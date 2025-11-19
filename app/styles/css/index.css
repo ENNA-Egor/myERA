@@ -157,10 +157,6 @@ h2 {
   cursor: pointer;
 }
 
-.persCard {
-  position: relative;
-}
-
 .persCardBlok {
   display: flex;
   flex-direction: row;
