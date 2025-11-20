@@ -6,6 +6,7 @@ import {FulListPanel} from '../Paneles/FulListPanel'
 import {PersonalCard} from '../Paneles/PersonalCard'
 import {Leftovers} from '../Paneles/Leftovers'
 import {Coming} from '../Paneles/Coming'
+import {ReferenceBook} from '../Paneles/ReferenceBook'
 import {RootState} from '../../../Store/store'
 import { useSelector } from 'react-redux'
 // import { toggleModal } from '../../../../Store/Slice/ModalWindowSlice'
@@ -39,6 +40,7 @@ export const BodyContent = () =>{
                     <button id= "3" onClick={selectBtn}  className="btnMenu allBtn"> Новая карточка </button>
                     <button id= "4" onClick={selectBtn} className="btnMenu allBtn"> Остатки </button>
                     <button id= "5" onClick={selectBtn} className="btnMenu allBtn"> Приход </button>
+                    <button id= "6" onClick={selectBtn} className="btnMenu allBtn"> Справочники </button>
                 </div>
             </div>
             <div className="mainWindow">
@@ -60,6 +62,9 @@ export const BodyContent = () =>{
                     </div>
                     <div id= "5" className="panels">
                         <Coming/>
+                    </div>
+                    <div id= "6" className="panels">
+                        <ReferenceBook/>
                     </div>
                 </div>
             </div>
