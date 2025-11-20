@@ -20,25 +20,26 @@ export const ModalPanel =() => {
         <div className='titleFIO'>
           <h2>{selectedUsers?.surname }</h2>
           <h2>{selectedUsers?.first_name }</h2>
+          <h2>{selectedUsers?.patronymic }</h2>
         </div>
           <table className="user-table">
             <thead>
               <tr>
-                <th>ID</th>
+                {/* <th>ID</th>
                 <th>Фамилия</th>
                 <th>Имя</th>
-                <th>Отчество</th>
+                <th>Отчество</th> */}
                 <th>Профессия</th>
               </tr>
             </thead>
             <tbody>
                 <tr key={ selectedUsers?.id}>
-                  <td>{ selectedUsers?.id}</td>
+                  {/* <td>{ selectedUsers?.id}</td>
                   <td>
                       { selectedUsers?.surname}
                   </td>
                   <td>{ selectedUsers?.first_name}</td>
-                  <td>{ selectedUsers?.patronymic}</td>
+                  <td>{ selectedUsers?.patronymic}</td> */}
                   <td>{ selectedUsers?.profession}</td>
                 </tr>
             </tbody>
