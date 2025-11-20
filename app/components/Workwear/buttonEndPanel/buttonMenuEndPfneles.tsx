@@ -35,7 +35,7 @@ export const BodyContent = () =>{
         <div className="body">
             <div className="levtMenu">
                 <div className="mainMenyBtn">
-                    <button id= "1" onClick={selectBtn} className={"btnMenu allBtn active"}> Главный </button>
+                    <button id= "1" onClick={selectBtn} className={"btnMenu allBtn active"}> Поиск </button>
                     <button id= "2" onClick={selectBtn} className="btnMenu allBtn"> Полный список </button>
                     <button id= "3" onClick={selectBtn}  className="btnMenu allBtn"> Новая карточка </button>
                     <button id= "4" onClick={selectBtn} className="btnMenu allBtn"> Остатки </button>

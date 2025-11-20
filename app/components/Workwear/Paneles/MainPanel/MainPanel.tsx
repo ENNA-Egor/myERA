@@ -46,7 +46,7 @@ export const MainPanel = () => {
 
   return (
     <div className="user-table-container">
-      <h2>Список Пользователей</h2>
+      <h2>Поиск работнников</h2>
 
       <div className="search-bar">
         <input
