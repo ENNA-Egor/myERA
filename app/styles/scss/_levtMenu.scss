@@ -1,5 +1,7 @@
+@import './constants';
+
 .levtMenu{
-    background-color: rgba(0, 255, 255, 0.137);
+    background-color: $background-button-color;
     width: 10%;
     height: 89vh;
 }
@@ -10,11 +12,11 @@
 }
 
 .btnMenu {
-    color: antiquewhite;
-     background-color: rgb(70, 70, 70);
+    color:$text-color-white;
+     background-color: $background-button-color;
 }
 
 .active {
-   background-color: rgb(44, 44, 44);
-   color: rgb(61, 253, 173);
+   background-color: $background-button-color;
+   color: $text-color;
 }

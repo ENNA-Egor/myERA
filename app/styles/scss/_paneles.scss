@@ -1,3 +1,6 @@
+@import './constants';
+
+
 .panelesMeny{
     display: flex;
     flex-direction:row;
@@ -9,11 +12,11 @@
     width: 100%;
     height: 89vh;
     color: antiquewhite;
-    background-color: rgb(70, 70, 70);
+    background-color:$background-panel-color;
     display: none;
 }
  .activePanel {
-   background-color: rgb(44, 44, 44);
+   background-color: $background-panel-color;
    color: rgb(61, 253, 173);
    display: block;
 }
@@ -21,7 +24,7 @@
 .modalMain{
     width: 90%;
     height: 90%;
-    background-color: rgb(97, 48, 48);
+    background-color:  $background-panel-color;
     display: none;
 }
 
