@@ -78,9 +78,9 @@ export const MainPanel = () => {
             </thead>
             <tbody>
               {filteredUsers.map((user) => (
-                <tr key={user.id}>
+                <tr key={user.id} >
                   {/* <td>{user.id}</td> */}
-                  <td>
+                  <td className='tableStyle'>
                     <span
                       className="clickable-surname"
                       onClick={() => handleSurnameClick(user)}
@@ -88,8 +88,8 @@ export const MainPanel = () => {
                       {user.surname}
                     </span>
                   </td>
-                  <td>{user.first_name}</td>
-                  <td>{user.patronymic}</td>
+                  <td className='tableStyle'>{user.first_name}</td>
+                  <td className='tableStyle'>{user.patronymic}</td>
                 </tr>
               ))}
             </tbody>
