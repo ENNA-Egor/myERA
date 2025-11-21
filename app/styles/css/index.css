@@ -151,10 +151,15 @@ a:not([class]) {
 
 h2 {
   margin-left: 5px;
+  color: aqua;
 }
 
 .clickable-surname {
   cursor: pointer;
+}
+
+.user-table {
+  color: aqua;
 }
 
 .persCardBlok {

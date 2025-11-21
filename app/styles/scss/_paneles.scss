@@ -41,7 +41,13 @@
 
 h2 {
     margin-left: 5px;
+    color: $text-color
 }
 .clickable-surname {
     cursor: pointer;
+}
+
+.user-table{
+    @extend .h2;
+    //  color: $text-color
 }
