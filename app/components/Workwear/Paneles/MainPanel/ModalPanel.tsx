@@ -1,5 +1,5 @@
 // src/components/ButtonCls.tsx
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import {RootState} from '../../../../Store/store'
 import { useDispatch, useSelector} from 'react-redux'
 import { toggleModal } from '../../../../Store/Slice/ModalWindowSlice'
@@ -8,23 +8,29 @@ export const ModalPanel =() => {
      const selectId = useSelector((state: RootState) => state.modal.visibleID);
      const selectUserAll = useSelector((state: RootState) => state.users);
      const selectWorkswearAll = useSelector((state: RootState) => state.workswears);
-    //  console.log (selectWorkswearAll)
       const selectedUser = selectUserAll.find(user => user.id === selectId);
-      const selectedUserWworkswear = selectWorkswearAll.filter(workswear => workswear.idUser === selectId);
-      console.log (selectedUserWworkswear)
      const dispatch = useDispatch();
      const handleClickModal =()=> {
            dispatch(toggleModal(0))
      }
 
-     const extractedData = selectedUserWworkswear.map(item => ({
-    typeWorkswear: item.typeWorkswear,
-    date_issue: item.date_issue
-}));
 
 
-  console.log (extractedData)
-  console.log (extractedData[0])
+      useEffect(() => {
+        setValue(selectWorkswearAll);
+      }, [selectWorkswearAll]);
+       const [objArr, setValue] = useState(selectWorkswearAll);
+       
+       const selectedUserWworkswear = objArr.filter(workswear => workswear.idUser === selectId);
+    const result =selectedUserWworkswear.map((obj) => {
+      return <p key={obj.id}>
+         {obj.typeWorkswear} {obj.date_issue} {obj.date_dismissal} {obj.prise} {obj.residual_prise} {obj.size} {obj.height}
+      </p>;
+   });
+
+
+
+
 
 
   const allUniqueKeys = Object.keys(selectWorkswearAll[0]);
@@ -61,6 +67,9 @@ console.log(allUniqueKeys);
                 </tr>
             </tbody>
           </table> 
+          <div>
+            {result}
+          </div>
         <button name="btnCls" className='allBtn btnMenu' onClick={handleClickModal}>Закрыть</button>
         <button name="btnCls" className='allBtn btnMenu'>Редактировать</button>
     </div>
