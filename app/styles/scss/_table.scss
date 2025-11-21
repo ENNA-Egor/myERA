@@ -1,4 +1,6 @@
+@import './constants';
+
 .tableStyle{
-   border: 1px solid #e7e7e7;
+   border: 1px solid $table-border-color;
     border-collapse: collapse;
 }

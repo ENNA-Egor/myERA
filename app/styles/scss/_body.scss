@@ -1,3 +1,5 @@
+@import './constants';
+
 .body {
    display: flex;
    width: 100%;
@@ -6,7 +8,7 @@
 
 
 .mainWindow {
-   background-color: rgba(255, 0, 234, 0.13);
+   background-color:$background-panel-color;
    width: 90%;
    height: 89vh;
 }

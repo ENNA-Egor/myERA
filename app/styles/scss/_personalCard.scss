@@ -1,3 +1,4 @@
+@import './constants';
 // .persCard {
 //     display: block;
 //     position: relative;
@@ -19,7 +20,7 @@
 }
 .personInput{
     position:absolute;
-    color: aqua;
+    color:$text-color;
     top: -1px;
     right: 10px;
 }

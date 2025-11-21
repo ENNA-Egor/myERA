@@ -1,5 +1,9 @@
+@import './constants';
+
+
+
 .window-frame {
-  background-color: rgb(54, 54, 54);
+  background-color: $background-window-color;
     display: flex;
   flex-direction: column;
   height: 94.5vh;
@@ -27,7 +31,7 @@
 .window-titlebar-title {
   padding: 5px;
   margin:  5px 5px 0 5px;
-  color: aliceblue;
+  color: $text-color-white;
   // background-color: rgb(173, 106, 106);
 }
 
@@ -37,7 +41,7 @@
   display: flex;
   padding: 5px;
   margin: 5px;
-  color: aliceblue;
+  color: $text-color-white;
   //  background-color: rgb(173, 106, 106);
 }
 

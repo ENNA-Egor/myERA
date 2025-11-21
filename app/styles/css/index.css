@@ -34,7 +34,7 @@ a:not([class]) {
 }
 
 .window-frame {
-  background-color: rgb(54, 54, 54);
+  background-color: rgb(39, 39, 39);
   display: flex;
   flex-direction: column;
   height: 94.5vh;
@@ -49,14 +49,14 @@ a:not([class]) {
 .window-titlebar-title {
   padding: 5px;
   margin: 5px 5px 0 5px;
-  color: aliceblue;
+  color: antiquewhite;
 }
 
 .window-titlebar-controls {
   display: flex;
   padding: 5px;
   margin: 5px;
-  color: aliceblue;
+  color: antiquewhite;
 }
 
 .titlebar-controlButton {
@@ -78,7 +78,7 @@ a:not([class]) {
 }
 
 .mainWindow {
-  background-color: rgba(255, 0, 234, 0.13);
+  background-color: rgb(44, 44, 44);
   width: 90%;
   height: 89vh;
 }
@@ -101,7 +101,7 @@ a:not([class]) {
 
 .active {
   background-color: rgb(51, 51, 51);
-  color: rgb(61, 253, 173);
+  color: aqua;
 }
 
 .allBtn {
@@ -128,7 +128,7 @@ a:not([class]) {
 
 .activePanel {
   background-color: rgb(44, 44, 44);
-  color: rgb(61, 253, 173);
+  color: aqua;
   display: block;
 }
 
