@@ -23,20 +23,7 @@ export const ModalPanel =() => {
        const [residualSumm, setResidualSumm] = useState(0);
        
        const selectedUserWworkswear = objArr.filter(workswear => workswear.idUser === selectId);
-  //   const result =selectedUserWworkswear.map((obj) => {
-  //     return <p key={obj.id}>
-  //        {obj.typeWorkswear} {obj.date_issue} {obj.date_dismissal} {obj.prise} {obj.residual_prise} {obj.size} {obj.height}
-  //     </p>;
-  //  });
 
-
-
-
-
-
-  const allUniqueKeys = Object.keys(selectWorkswearAll[0]);
-
-console.log(allUniqueKeys);
 
      return (
     <div >
