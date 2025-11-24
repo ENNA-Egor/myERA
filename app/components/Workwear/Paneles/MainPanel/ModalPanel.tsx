@@ -20,6 +20,7 @@ export const ModalPanel =() => {
         setValue(selectWorkswearAll);
       }, [selectWorkswearAll]);
        const [objArr, setValue] = useState(selectWorkswearAll);
+       const [residualSumm, setResidualSumm] = useState(0);
        
        const selectedUserWworkswear = objArr.filter(workswear => workswear.idUser === selectId);
   //   const result =selectedUserWworkswear.map((obj) => {
@@ -89,15 +90,20 @@ console.log(allUniqueKeys);
                   <td>{seltcted.residual_prise}</td>
                   <td>{seltcted.size}</td>
                   <td>{seltcted.height}</td>
+                  {/* setResidualSumm = residualSumm + {+seltcted.residual_prise} */}
                 </tr>
-              ))}
+              )
+            )
+              
+              }
             </tbody>
           </table> 
-          {/* <div>
-            {result}
-          </div> */}
         <button name="btnCls" className='allBtn btnMenu' onClick={handleClickModal}>Закрыть</button>
         <button name="btnCls" className='allBtn btnMenu'>Редактировать</button>
+                  <div className="user-table titleFIO">
+                    <p >Сумма остатка</p>
+                    <div > {residualSumm} </div>
+                  </div>
     </div>
     )
 }

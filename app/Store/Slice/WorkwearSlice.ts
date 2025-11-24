@@ -60,9 +60,9 @@ const valueUser =  [
     { id: 14, idUser:4, typeWorkswear:'Костюм зимний',date_issue: '10.11.2025', date_dismissal: '', prise: 2500, residual_prise: 0, size: '48-50', height: '182-188' },
     { id: 15, idUser:5, typeWorkswear:'Костюм летний',date_issue: '10.11.2025', date_dismissal: '', prise: 1000, residual_prise: 0, size: '48-50', height: '182-188' },
     { id: 16, idUser:6, typeWorkswear:'Костюм зимний',date_issue: '10.11.2025', date_dismissal: '', prise: 2500, residual_prise: 0, size: '48-50', height: '182-188' },
-    { id: 17, idUser:7, typeWorkswear:'Костюм летний',date_issue: '10.11.2025', date_dismissal: '', prise: 1000, residual_prise: 0, size: '48-50', height: '182-188' },
-    { id: 20, idUser:7, typeWorkswear:'Костюм зимний',date_issue: '14.11.2025', date_dismissal: '', prise: 1000, residual_prise: 0, size: '48-50', height: '182-188' },
-    { id: 21, idUser:7, typeWorkswear:'Плащь дождевик',date_issue: '14.11.2025', date_dismissal: '', prise: 1000, residual_prise: 0, size: '48-50', height: '182-188' },
+    { id: 17, idUser:7, typeWorkswear:'Костюм летний',date_issue: '10.11.2025', date_dismissal: '', prise: 1000, residual_prise: 600, size: '48-50', height: '182-188' },
+    { id: 20, idUser:7, typeWorkswear:'Костюм зимний',date_issue: '14.11.2025', date_dismissal: '', prise: 1000, residual_prise: 900, size: '48-50', height: '182-188' },
+    { id: 21, idUser:7, typeWorkswear:'Плащь дождевик',date_issue: '14.11.2025', date_dismissal: '', prise: 1000, residual_prise: 900, size: '48-50', height: '182-188' },
 ]
 
 
