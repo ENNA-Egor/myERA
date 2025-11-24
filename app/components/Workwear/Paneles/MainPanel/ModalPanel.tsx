@@ -14,15 +14,21 @@ export const ModalPanel =() => {
            dispatch(toggleModal(0))
      }
 
+     const [objArr, setValue] = useState(selectWorkswearAll);
 
+     const selectedUserWworkswear = objArr.filter(workswear => workswear.idUser === selectId);
 
       useEffect(() => {
         setValue(selectWorkswearAll);
-      }, [selectWorkswearAll]);
-       const [objArr, setValue] = useState(selectWorkswearAll);
-       const [residualSumm, setResidualSumm] = useState(0);
-       
-       const selectedUserWworkswear = objArr.filter(workswear => workswear.idUser === selectId);
+         // Метод reduce очень удобен для суммирования элементов массива
+    const totalPrise = selectedUserWworkswear.reduce((sum, selected) => {
+      // Убедимся, что значение является числом (или 0, если undefined/null)
+      return sum + (selected.residual_prise || 0);
+    }, 0); // Начинаем суммирование с 0  
+    setResidualSumm(totalPrise); // Устанавливаем вычисленную сумму в стейт
+  }, [selectWorkswearAll, selectedUserWworkswear]);
+  const [residualSumm, setResidualSumm] = useState(0);
+  
 
 
      return (
@@ -79,10 +85,7 @@ export const ModalPanel =() => {
                   <td>{seltcted.height}</td>
                   {/* setResidualSumm = residualSumm + {+seltcted.residual_prise} */}
                 </tr>
-              )
-            )
-              
-              }
+              ))}
             </tbody>
           </table> 
         <button name="btnCls" className='allBtn btnMenu' onClick={handleClickModal}>Закрыть</button>
