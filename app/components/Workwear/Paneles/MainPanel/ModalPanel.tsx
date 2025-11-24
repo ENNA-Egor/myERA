@@ -22,11 +22,11 @@ export const ModalPanel =() => {
        const [objArr, setValue] = useState(selectWorkswearAll);
        
        const selectedUserWworkswear = objArr.filter(workswear => workswear.idUser === selectId);
-    const result =selectedUserWworkswear.map((obj) => {
-      return <p key={obj.id}>
-         {obj.typeWorkswear} {obj.date_issue} {obj.date_dismissal} {obj.prise} {obj.residual_prise} {obj.size} {obj.height}
-      </p>;
-   });
+  //   const result =selectedUserWworkswear.map((obj) => {
+  //     return <p key={obj.id}>
+  //        {obj.typeWorkswear} {obj.date_issue} {obj.date_dismissal} {obj.prise} {obj.residual_prise} {obj.size} {obj.height}
+  //     </p>;
+  //  });
 
 
 
@@ -67,9 +67,35 @@ console.log(allUniqueKeys);
                 </tr>
             </tbody>
           </table> 
-          <div>
+          <table className="user-table">
+            <thead>
+              <tr>
+                <th>Вид СИЗ</th>
+                <th>Дата выдачи</th>
+                <th>Дата увольнения</th>
+                <th>Стоимость</th>
+                <th>Остаточная стоимость</th>
+                <th>Размер</th>
+                <th>Рост</th>
+              </tr>
+            </thead>
+            <tbody>
+              {selectedUserWworkswear.map((seltcted) => (
+                <tr key={seltcted.id}>
+                   <td>{ seltcted.typeWorkswear}</td>
+                  <td> { seltcted.date_issue} </td>
+                  <td>{ seltcted.date_dismissal}</td>
+                  <td>{ seltcted.prise}</td>
+                  <td>{seltcted.residual_prise}</td>
+                  <td>{seltcted.size}</td>
+                  <td>{seltcted.height}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table> 
+          {/* <div>
             {result}
-          </div>
+          </div> */}
         <button name="btnCls" className='allBtn btnMenu' onClick={handleClickModal}>Закрыть</button>
         <button name="btnCls" className='allBtn btnMenu'>Редактировать</button>
     </div>
