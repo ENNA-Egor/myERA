@@ -48,7 +48,11 @@ h2 {
 }
 
 .user-table{
-    @extend .h2;
-    //  color: $text-color
+    margin-left: 5px;
+    color: $text-color
 }
 
+.imgButton {
+    width: 20px; 
+    height: 20px; 
+}
