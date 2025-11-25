@@ -14,15 +14,6 @@ export const ModalPanel =() => {
            dispatch(toggleModal(0))
      }
 
-     const currentDate = new Date();
-     const endDate = new Date(currentDate.toDateString());
-      const startDate = new Date('2025.11.10');;
-      const differenceInMilliseconds = endDate.getTime() - startDate.getTime();
-      const millisecondsPerDay = 1000 * 60 * 60 * 24;
-      const differenceInDays = Math.round(differenceInMilliseconds / millisecondsPerDay);
-
-
-console.log(`Разница в днях: ${differenceInDays}`); // Выведет: Разница в днях: 9
 
 
      const [objArr, setValue] = useState(selectWorkswearAll);
@@ -34,15 +25,21 @@ console.log(`Разница в днях: ${differenceInDays}`); // Выведе�
          // Метод reduce очень удобен для суммирования элементов массива
             const totalPrise = selectedUserWworkswear.reduce((sum, selected) => {
               // Убедимся, что значение является числом (или 0, если undefined/null)
-                  return sum + (residual_p(selected.prise) || 0);
+                  return sum + (residual_p(selected.prise, selected.wearing_period, selected.date_issue) || 0);
              }, 0); // Начинаем суммирование с 0  
           setResidualSumm(totalPrise); // Устанавливаем вычисленную сумму в стейт
         }, [selectWorkswearAll, selectedUserWworkswear]);
 
   const [residualSumm, setResidualSumm] = useState(0);
   
-  const residual_p =(ost) => {
-    return ost/5
+  const residual_p =(prise, period, start_date) => {
+    const endDate = new Date();
+    //  const endDate = new Date(new Date().toDateString());
+      const startDate = new Date(start_date);;
+      const differenceInMilliseconds = endDate.getTime() - startDate.getTime();
+      const millisecondsPerDay = 1000 * 60 * 60 * 24;
+      const differenceInDays = Math.round(differenceInMilliseconds / millisecondsPerDay);
+    return Math.round(prise * (period*365 -differenceInDays)/(period*365));
   }
 
      return (
@@ -88,7 +85,7 @@ console.log(`Разница в днях: ${differenceInDays}`); // Выведе�
                   <td> { selected.date_issue} </td>
                   <td>{ selected.wearing_period}</td>
                   <td>{ selected.prise}</td>
-                  <td>{residual_p(selected.prise)}</td>
+                  <td>{residual_p(selected.prise, selected.wearing_period, selected.date_issue)}</td>
                   <td>{selected.size}</td>
                   <td>{selected.height}</td>
                 </tr>

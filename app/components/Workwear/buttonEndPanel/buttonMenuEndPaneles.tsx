@@ -45,10 +45,10 @@ export const BodyContent = () =>{
             </div>
             <div className="mainWindow">
                 <div className="panelesMeny">
-                    <div id= "2" className="panels">
+                    <div id= "2" className="panels activePanel">
                         <FulListPanel/>
                     </div>
-                    <div id= "1" className=" panels activePanel"> 
+                    <div id= "1" className=" panels "> 
                         <MainPanel/>          
                     </div>
                     <div id="modalMain" className={modalClasses}>
