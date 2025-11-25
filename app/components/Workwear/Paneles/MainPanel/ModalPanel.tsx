@@ -59,12 +59,6 @@ export const ModalPanel =() => {
             </thead>
             <tbody>
                 <tr key={ selectedUser?.id}>
-                  {/* <td>{ selectedUsers?.id}</td>
-                  <td>
-                      { selectedUsers?.surname}
-                  </td>
-                  <td>{ selectedUsers?.first_name}</td>
-                  <td>{ selectedUsers?.patronymic}</td> */}
                   <td>{ selectedUser?.profession}</td>
                 </tr>
             </tbody>
