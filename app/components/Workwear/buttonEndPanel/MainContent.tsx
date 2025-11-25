@@ -1,7 +1,7 @@
 
 import React, {Component} from "react"
 
-import { BodyContent} from './buttonMenuEndPfneles'
+import { BodyContent} from './buttonMenuEndPaneles'
 // import {userData} from './Data'
 
 

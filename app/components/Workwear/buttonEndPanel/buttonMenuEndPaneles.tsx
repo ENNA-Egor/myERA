@@ -35,8 +35,8 @@ export const BodyContent = () =>{
         <div className="body">
             <div className="levtMenu">
                 <div className="mainMenyBtn">
-                    <button id= "1" onClick={selectBtn} className={"btnMenu allBtn active"}> Поиск </button>
-                    <button id= "2" onClick={selectBtn} className="btnMenu allBtn"> Полный список </button>
+                    <button id= "2" onClick={selectBtn} className={"btnMenu allBtn active"}> Полный список </button>
+                    <button id= "1" onClick={selectBtn} className="btnMenu allBtn"> Поиск </button>
                     <button id= "3" onClick={selectBtn}  className="btnMenu allBtn"> Новая карточка </button>
                     <button id= "4" onClick={selectBtn} className="btnMenu allBtn"> Остатки </button>
                     <button id= "5" onClick={selectBtn} className="btnMenu allBtn"> Приход </button>
@@ -45,14 +45,14 @@ export const BodyContent = () =>{
             </div>
             <div className="mainWindow">
                 <div className="panelesMeny">
+                    <div id= "2" className="panels">
+                        <FulListPanel/>
+                    </div>
                     <div id= "1" className=" panels activePanel"> 
                         <MainPanel/>          
                     </div>
                     <div id="modalMain" className={modalClasses}>
                         <ModalPanel/>
-                    </div>
-                    <div id= "2" className="panels">
-                        <FulListPanel/>
                     </div>
                     <div id= "3" className="panels">
                         <PersonalCard/>
