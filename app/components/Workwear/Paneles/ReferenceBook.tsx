@@ -9,9 +9,14 @@ export const ReferenceBook =() => {
         <div>
             <h3>Справочники</h3>
             <input type="Text"></input>
-            <button>
-                 <img src={myImage}  className="imgButton"/>
-            </button>
+            <span
+                      className="clickable-surname"
+                      
+                    >
+                 <img src={myImage}  className="imgButton allBtn"/>
+                    </span>
+            {/* <button className="allBtn">
+            </button> */}
         </div>
     )
 }
