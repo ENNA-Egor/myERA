@@ -16,8 +16,14 @@ export const ModalPanel =() => {
 
      const currentDate = new Date();
      const endDate = new Date(currentDate.toDateString());
-      console.log(endDate);
-      // const startDate = '14.11.2025'
+      const startDate = new Date('2025.11.10');;
+      const differenceInMilliseconds = endDate.getTime() - startDate.getTime();
+      const millisecondsPerDay = 1000 * 60 * 60 * 24;
+      const differenceInDays = Math.round(differenceInMilliseconds / millisecondsPerDay);
+
+
+console.log(`Разница в днях: ${differenceInDays}`); // Выведет: Разница в днях: 9
+
 
      const [objArr, setValue] = useState(selectWorkswearAll);
 
