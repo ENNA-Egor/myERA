@@ -14,6 +14,11 @@ export const ModalPanel =() => {
            dispatch(toggleModal(0))
      }
 
+     const currentDate = new Date();
+     const endDate = new Date(currentDate.toDateString());
+      console.log(endDate);
+      // const startDate = '14.11.2025'
+
      const [objArr, setValue] = useState(selectWorkswearAll);
 
      const selectedUserWworkswear = objArr.filter(workswear => workswear.idUser === selectId);
@@ -21,15 +26,18 @@ export const ModalPanel =() => {
       useEffect(() => {
         setValue(selectWorkswearAll);
          // Метод reduce очень удобен для суммирования элементов массива
-    const totalPrise = selectedUserWworkswear.reduce((sum, selected) => {
-      // Убедимся, что значение является числом (или 0, если undefined/null)
-      return sum + (selected.residual_prise || 0);
-    }, 0); // Начинаем суммирование с 0  
-    setResidualSumm(totalPrise); // Устанавливаем вычисленную сумму в стейт
-  }, [selectWorkswearAll, selectedUserWworkswear]);
+            const totalPrise = selectedUserWworkswear.reduce((sum, selected) => {
+              // Убедимся, что значение является числом (или 0, если undefined/null)
+                  return sum + (residual_p(selected.prise) || 0);
+             }, 0); // Начинаем суммирование с 0  
+          setResidualSumm(totalPrise); // Устанавливаем вычисленную сумму в стейт
+        }, [selectWorkswearAll, selectedUserWworkswear]);
+
   const [residualSumm, setResidualSumm] = useState(0);
   
-
+  const residual_p =(ost) => {
+    return ost/5
+  }
 
      return (
     <div >
@@ -66,7 +74,7 @@ export const ModalPanel =() => {
               <tr>
                 <th>Вид СИЗ</th>
                 <th>Дата выдачи</th>
-                <th>Дата увольнения</th>
+                <th>Срок носки</th>
                 <th>Стоимость</th>
                 <th>Остаточная стоимость</th>
                 <th>Размер</th>
@@ -74,26 +82,31 @@ export const ModalPanel =() => {
               </tr>
             </thead>
             <tbody>
-              {selectedUserWworkswear.map((seltcted) => (
-                <tr key={seltcted.id}>
-                   <td>{ seltcted.typeWorkswear}</td>
-                  <td> { seltcted.date_issue} </td>
-                  <td>{ seltcted.date_dismissal}</td>
-                  <td>{ seltcted.prise}</td>
-                  <td>{seltcted.residual_prise}</td>
-                  <td>{seltcted.size}</td>
-                  <td>{seltcted.height}</td>
-                  {/* setResidualSumm = residualSumm + {+seltcted.residual_prise} */}
+              {selectedUserWworkswear.map((selected) => (
+                <tr key={selected.id}>
+                   <td>{ selected.typeWorkswear}</td>
+                  <td> { selected.date_issue} </td>
+                  <td>{ selected.wearing_period}</td>
+                  <td>{ selected.prise}</td>
+                  <td>{residual_p(selected.prise)}</td>
+                  <td>{selected.size}</td>
+                  <td>{selected.height}</td>
                 </tr>
               ))}
+              <tr>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th>Сумма остатка</th>
+                <th>{residualSumm}</th>
+                <th></th>
+                <th></th>
+              </tr>
             </tbody>
           </table> 
         <button name="btnCls" className='allBtn btnMenu' onClick={handleClickModal}>Закрыть</button>
         <button name="btnCls" className='allBtn btnMenu'>Редактировать</button>
-                  <div className="user-table titleFIO">
-                    <p >Сумма остатка</p>
-                    <div > {residualSumm} </div>
-                  </div>
+
     </div>
     )
 }
