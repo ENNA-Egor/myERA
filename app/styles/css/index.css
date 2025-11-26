@@ -169,6 +169,17 @@ h2 {
   fill: antiquewhite;
 }
 
+.labelStyle {
+  margin-left: 5px;
+  color: aqua;
+  font-size: 25px;
+}
+
+.checkStyle {
+  width: 20px;
+  height: 20px;
+}
+
 .persCardBlok {
   display: flex;
   flex-direction: row;

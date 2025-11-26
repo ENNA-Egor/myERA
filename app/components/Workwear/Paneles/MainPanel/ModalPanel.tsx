@@ -49,6 +49,8 @@ export const ModalPanel =() => {
           <h2>{selectedUser?.surname }</h2>
           <h2>{selectedUser?.first_name }</h2>
           <h2>{selectedUser?.patronymic }</h2>
+          <label className='labelStyle'>Увольнение</label>
+           <input type='checkbox' className='checkStyle'></input>
         </div>
           <table className="user-table">
             <thead>
@@ -76,6 +78,7 @@ export const ModalPanel =() => {
                 <th>Остаточная стоимость</th>
                 <th>Размер</th>
                 <th>Рост</th>
+                <th>Фиксировать данные</th>
               </tr>
             </thead>
             <tbody>
@@ -88,6 +91,9 @@ export const ModalPanel =() => {
                   <td>{residual_p(selected.prise, selected.wearing_period, selected.date_issue)}</td>
                   <td>{selected.size}</td>
                   <td>{selected.height}</td>
+                  <td> 
+                    <input type='checkbox'></input>
+                  </td>
                 </tr>
               ))}
               <tr>

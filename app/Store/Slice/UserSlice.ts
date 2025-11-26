@@ -10,13 +10,13 @@ interface valueUser {
 }
 
 const valueUser =  [
-    { id: 1, surname: 'Иванов', first_name: 'Владимир', patronymic: 'Петрович', profession:'Рабочий' },
-    { id: 2, surname: 'Петров', first_name: 'Иван', patronymic: 'Сидорович' , profession:'Воджитель'},
-    { id: 3, surname: 'Сидоров', first_name: 'Юрий', patronymic: 'Викторович' , profession:'Тракторист'},
-    { id: 4, surname: 'Бобров', first_name: 'Семён', patronymic: 'Николаевич', profession:'Тракторист' },
-    { id: 5, surname: 'Мишин', first_name: 'Василий', patronymic: 'Олегович' , profession:'Водитель'},
-    { id: 6, surname: 'Володин', first_name: 'Сидор', patronymic: 'Ефимович' , profession:'Рабочий'},
-    { id: 7, surname: 'Сидоров', first_name: 'Михаил', patronymic: 'Викторович' , profession:'Рабочий'},
+    { id: 1, surname: 'Иванов', first_name: 'Владимир', patronymic: 'Петрович', profession:'Рабочий', status: false },
+    { id: 2, surname: 'Петров', first_name: 'Иван', patronymic: 'Сидорович' , profession:'Воджитель', status: false},
+    { id: 3, surname: 'Сидоров', first_name: 'Юрий', patronymic: 'Викторович' , profession:'Тракторист', status: false},
+    { id: 4, surname: 'Бобров', first_name: 'Семён', patronymic: 'Николаевич', profession:'Тракторист', status: false },
+    { id: 5, surname: 'Мишин', first_name: 'Василий', patronymic: 'Олегович' , profession:'Водитель', status: false},
+    { id: 6, surname: 'Володин', first_name: 'Сидор', patronymic: 'Ефимович' , profession:'Рабочий', status: false},
+    { id: 7, surname: 'Сидоров', first_name: 'Михаил', patronymic: 'Викторович' , profession:'Рабочий', status: false},
 ]
 
 const userSlice = createSlice({
