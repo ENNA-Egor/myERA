@@ -3,6 +3,8 @@ import React, {useState, useEffect} from 'react';
 import {RootState} from '../../../../Store/store'
 import { useDispatch, useSelector} from 'react-redux'
 import { toggleModal } from '../../../../Store/Slice/ModalWindowSlice'
+import { statusUserChecked } from '../../../../Store/Slice/UserSlice'
+
 
 export const ModalPanel =() => {
      const selectId = useSelector((state: RootState) => state.modal.visibleID);
@@ -42,9 +44,9 @@ export const ModalPanel =() => {
     return Math.round((prise * (period*365 -differenceInDays)/(period*365))/10)*10;
   }
 
-  // const checkedHandleClick = () =>{
-
-  // }
+  const checkedHandle = () =>{
+      dispatch (statusUserChecked(selectedUser?.id, selectedUser?.status))
+  }
 
      return (
     <div >
@@ -54,7 +56,7 @@ export const ModalPanel =() => {
           <h2>{selectedUser?.first_name }</h2>
           <h2>{selectedUser?.patronymic }</h2>
           <label className='labelStyle'>Увольнение</label>
-           <input type='checkbox' className='checkStyle' checked={selectedUser?.status}></input>
+           <input type='checkbox' className='checkStyle' checked={selectedUser?.status || false} onChange={checkedHandle}></input>
         </div>
           <table className="user-table">
             <thead>

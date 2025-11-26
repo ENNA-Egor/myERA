@@ -43,12 +43,15 @@ const userSlice = createSlice({
       state.push(action.payload)
     },
     statusUserChecked: (state, action) => {
-      state.push(action.payload)
+      const id = action.payload;
+      const user = state.find((user) => user.id === id);
+      // @ts-ignore
+      user.status = !user?.status;
     },
   },
 })
 
 
-export const { addUser, removeUser} = userSlice.actions
+export const { addUser, removeUser, statusUserChecked} = userSlice.actions
 
 export default userSlice.reducer
