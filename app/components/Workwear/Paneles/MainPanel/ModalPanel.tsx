@@ -39,7 +39,7 @@ export const ModalPanel =() => {
       const differenceInMilliseconds = endDate.getTime() - startDate.getTime();
       const millisecondsPerDay = 1000 * 60 * 60 * 24;
       const differenceInDays = Math.round(differenceInMilliseconds / millisecondsPerDay);
-    return Math.round(prise * (period*365 -differenceInDays)/(period*365));
+    return Math.round((prise * (period*365 -differenceInDays)/(period*365))/10)*10;
   }
 
      return (
