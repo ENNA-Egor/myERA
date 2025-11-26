@@ -42,6 +42,10 @@ export const ModalPanel =() => {
     return Math.round((prise * (period*365 -differenceInDays)/(period*365))/10)*10;
   }
 
+  // const checkedHandleClick = () =>{
+
+  // }
+
      return (
     <div >
         <h2>Лична карточка </h2>
@@ -50,7 +54,7 @@ export const ModalPanel =() => {
           <h2>{selectedUser?.first_name }</h2>
           <h2>{selectedUser?.patronymic }</h2>
           <label className='labelStyle'>Увольнение</label>
-           <input type='checkbox' className='checkStyle'></input>
+           <input type='checkbox' className='checkStyle' checked={selectedUser?.status}></input>
         </div>
           <table className="user-table">
             <thead>
@@ -92,7 +96,7 @@ export const ModalPanel =() => {
                   <td>{selected.size}</td>
                   <td>{selected.height}</td>
                   <td> 
-                    <input type='checkbox'></input>
+                    {/* <input type='checkbox' checked={selected.status}></input> */}
                   </td>
                 </tr>
               ))}
