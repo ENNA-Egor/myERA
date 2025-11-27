@@ -27,6 +27,9 @@
     background-color:  $background-panel-color;
     display: none;
 }
+.workwearMain{
+    @extend .modalMain;
+}
 
 .modalMainActive{
    display: block;
@@ -37,6 +40,16 @@
    top: 30px;
    position: absolute; 
 }
+
+.workwearMainActive {
+    @extend .modalMainActive;
+   width: 80%;
+    height: 80%;
+    background-color: $background-panel-color;
+   left: 40px;
+   top: 10%;
+}
+
 .titleFIO {
     display: flex;
     flex-direction: row;

@@ -6,6 +6,7 @@ import {FulListPanel} from '../Paneles/FulListPanel'
 import {PersonalCard} from '../Paneles/PersonalCard'
 import {Leftovers} from '../Paneles/Leftovers'
 import {Coming} from '../Paneles/Coming'
+import {WorkwearAdd} from '../Paneles/MainPanel/WorkwearAdd'
 import {ReferenceBook} from '../Paneles/ReferenceBook'
 import {RootState} from '../../../Store/store'
 import { useSelector } from 'react-redux'
@@ -17,6 +18,8 @@ export const BodyContent = () =>{
 
      const isModalOpen = useSelector((state: RootState) => state.modal.isVisible);
       const modalClasses = `modalMain ${isModalOpen ? 'modalMainActive' : ''}`;
+     const workwearOpen = useSelector((state: RootState) => state.modal.workwearVisible);
+      const workwearClasses = `workwearMain ${workwearOpen ? 'workwearMainActive' : ''}`;
     
     const selectBtn =(e)=> {
         const tab_elements = document.querySelectorAll('.btnMenu');
@@ -53,6 +56,9 @@ export const BodyContent = () =>{
                     </div>
                     <div id="modalMain" className={modalClasses}>
                         <ModalPanel/>
+                    </div>
+                    <div id="workwearMain" className={workwearClasses}>
+                        <WorkwearAdd/>
                     </div>
                     <div id= "3" className="panels">
                         <PersonalCard/>

@@ -2,7 +2,7 @@
 import React, {useState, useEffect} from 'react';
 import {RootState} from '../../../../Store/store'
 import { useDispatch, useSelector} from 'react-redux'
-import { toggleModal } from '../../../../Store/Slice/ModalWindowSlice'
+import { toggleModal, toggleWorkswear } from '../../../../Store/Slice/ModalWindowSlice'
 import { statusUserChecked } from '../../../../Store/Slice/UserSlice'
 
 
@@ -14,6 +14,9 @@ export const ModalPanel =() => {
      const dispatch = useDispatch();
      const handleClickModal =()=> {
            dispatch(toggleModal(0))
+     }
+     const handleClickWorkswear =()=> {
+           dispatch(toggleWorkswear(1))
      }
 
 
@@ -114,7 +117,7 @@ export const ModalPanel =() => {
             </tbody>
           </table> 
         <button name="btnCls" className='allBtn btnMenu' onClick={handleClickModal}>Закрыть</button>
-        <button name="btnCls" className='allBtn btnMenu'>Добавить</button>
+        <button name="btnCls" className='allBtn btnMenu' onClick={handleClickWorkswear}>Добавить</button>
 
     </div>
     )

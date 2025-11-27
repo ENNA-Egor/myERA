@@ -3,15 +3,17 @@ import { createSlice} from '@reduxjs/toolkit'
 
 interface ModalState {
   isVisible: boolean;
-   visibleID: number;
-  // Добавьте другие свойства сюда, если понадобится
-  // someOtherProperty: string;
+  visibleID: number;
+  workwearVisible: boolean;
+  visibleWorkwear: number;
 }
 
 
 const ModalState = {
-  isVisible: false, 
-  visibleID: 0,
+  isVisible: false,
+  visibleID: 0, 
+  workwearVisible:false,
+  visibleWorkwear: 1, 
 };
 
 
@@ -20,16 +22,18 @@ const toggleVisibleModal = createSlice({
   initialState:ModalState,
   reducers: {
     toggleModal:(state, action) => {
-      // Здесь Immer работает, потому что state - это объект, и мы мутируем его свойство
        state.isVisible = ! state.isVisible; // <-- Мутируем свойство объекта
         state.visibleID = action.payload;
-      //  state.visibleID = id
+    },
+    toggleWorkswear:(state, action) => {
+       state.workwearVisible = ! state.workwearVisible; // <-- Мутируем свойство объекта
+        state.visibleWorkwear = action.payload;
     },
     
   }
 })
 
 
-export const {toggleModal} = toggleVisibleModal.actions
+export const {toggleModal, toggleWorkswear} = toggleVisibleModal.actions
 
 export default toggleVisibleModal.reducer

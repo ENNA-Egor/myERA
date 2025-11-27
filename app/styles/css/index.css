@@ -132,14 +132,14 @@ a:not([class]) {
   display: block;
 }
 
-.modalMain {
+.modalMain, .workwearMain {
   width: 90%;
   height: 90%;
   background-color: rgb(44, 44, 44);
   display: none;
 }
 
-.modalMainActive {
+.modalMainActive, .workwearMainActive {
   display: block;
   width: 90%;
   height: 90%;
@@ -147,6 +147,14 @@ a:not([class]) {
   left: 30px;
   top: 30px;
   position: absolute;
+}
+
+.workwearMainActive {
+  width: 80%;
+  height: 80%;
+  background-color: rgb(44, 44, 44);
+  left: 40px;
+  top: 10%;
 }
 
 .titleFIO {
