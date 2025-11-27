@@ -5,6 +5,7 @@ import React, { useState, useEffect} from 'react';
 import { useDispatch, useSelector} from 'react-redux'
 import { toggleModal } from '../../../Store/Slice/ModalWindowSlice'
 import {RootState} from '../../../Store/store'
+import { statusUserChecked } from '../../../Store/Slice/UserSlice'
 
 export const FulListPanel = () => {
 
@@ -22,12 +23,20 @@ export const FulListPanel = () => {
  
   // Состояние для хранения полного списка пользователей
   const [users, setUsers] = useState(initialUsers);
+
+    // const checkedHandle = () =>{
+    //     dispatch (statusUserChecked(user.id))
+    // }
  
+     const checkedHandle = (userId) => {
+    dispatch(statusUserChecked(userId));
+  };
   
 
   return (
     <div className="user-table-container">
-      <h2>Список работников</h2>
+      <h2>Полный список работников</h2>
+      <input type='check'></input>
 
         <table className="user-table">
           <thead>
@@ -36,6 +45,7 @@ export const FulListPanel = () => {
               <th>Фамилия</th>
               <th>Имя</th>
               <th>Отчество</th>
+              <th>Статус</th>
             </tr>
           </thead>
           <tbody>
@@ -52,6 +62,9 @@ export const FulListPanel = () => {
                 </td>
                 <td>{user.first_name}</td>
                 <td>{user.patronymic}</td>
+                <td>{user.status ? 'Уволен' : 'Работает'}
+                  <input type='checkbox' className='checkStyle' checked={user.status || false} onChange={() => checkedHandle(user.id)}></input>
+                </td>
               </tr>
             ))}
           </tbody>

@@ -141,6 +141,11 @@ a:not([class]) {
 
 .modalMainActive {
   display: block;
+  width: 90%;
+  height: 90%;
+  background-color: rgb(72, 79, 83);
+  left: 30px;
+  top: 30px;
   position: absolute;
 }
 

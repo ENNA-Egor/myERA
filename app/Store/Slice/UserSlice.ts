@@ -47,6 +47,8 @@ const userSlice = createSlice({
       const user = state.find((user) => user.id === id);
       // @ts-ignore
       user.status = !user?.status;
+       // @ts-ignore
+      console.log (user.status)
     },
   },
 })

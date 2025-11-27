@@ -30,8 +30,11 @@
 
 .modalMainActive{
    display: block;
-//    left: 250px;
-//    top: 100px;
+   width: 90%;
+    height: 90%;
+    background-color:  $background-momdal-panel-color;
+   left: 30px;
+   top: 30px;
    position: absolute; 
 }
 .titleFIO {

@@ -45,7 +45,7 @@ export const ModalPanel =() => {
   }
 
   const checkedHandle = () =>{
-      dispatch (statusUserChecked(selectedUser?.id, selectedUser?.status))
+      dispatch (statusUserChecked(selectedUser?.id))
   }
 
      return (
@@ -55,7 +55,7 @@ export const ModalPanel =() => {
           <h2>{selectedUser?.surname }</h2>
           <h2>{selectedUser?.first_name }</h2>
           <h2>{selectedUser?.patronymic }</h2>
-          <label className='labelStyle'>Увольнение</label>
+          <label className='labelStyle'>{!selectedUser?.status ? 'Работает' : 'Уволен'}</label>
            <input type='checkbox' className='checkStyle' checked={selectedUser?.status || false} onChange={checkedHandle}></input>
         </div>
           <table className="user-table">
