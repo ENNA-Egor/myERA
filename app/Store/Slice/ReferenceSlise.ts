@@ -16,7 +16,7 @@ interface references {
     typesWorkswear: [{id: string, name: string}],
     wearingPeriod : [{id: string, value: number}],
     profession : [{id: string, nameProf: string}],
-    size : [{id: string, nameProf: string}],
+    size : [{id: string, siz: string}],
 }
 
 
@@ -33,12 +33,12 @@ const references = {
     profession : [
         {id: '', nameProf: ''}
     ],
-    size : [
-        {id: '1', nameProf: '44-46'},
-        {id: '2', nameProf: '48-50'},
-        {id: '3', nameProf: '52-54'},
-        {id: '4', nameProf: '56-58'},
-        {id: '5', nameProf: '60-62'},
+    sizes : [
+        {id: '1', size: '44-46'},
+        {id: '2', size: '48-50'},
+        {id: '3', size: '52-54'},
+        {id: '4', size: '56-58'},
+        {id: '5', size: '60-62'},
     ],
 }
 
