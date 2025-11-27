@@ -19,6 +19,8 @@ interface valueUser {
   height: string;
 }
 
+const now = new Date();
+
 // interface danfWork {
 //   date_issue: Date; 
 //   date_dismissal: Date; 
@@ -77,8 +79,9 @@ const workwearsSlice = createSlice({
      // @ts-ignore
       prepare: (workswear) => ({
         payload: {
+          idUser: workswear.idUser,
           typeWorkswear: workswear.typeWorkswear,
-          date_issue: workswear.date_issue,
+          date_issue: now,
           wearing_period: workswear.wearing_period,
           prise: workswear.prise,
           residual_prise: 0,
