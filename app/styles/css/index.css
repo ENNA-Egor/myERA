@@ -147,7 +147,7 @@ a:not([class]) {
   left: 30px;
   top: 30px;
   position: absolute;
-  border: 2px solid rgb(168, 192, 190);
+  border: 3px ridge rgb(168, 192, 190);
 }
 
 .workwearMainActive {
