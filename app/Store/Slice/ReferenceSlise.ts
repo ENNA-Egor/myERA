@@ -35,10 +35,10 @@ const references = {
     ],
     size : [
         {id: '1', nameProf: '44-46'},
-        {id: '1', nameProf: '48-50'},
-        {id: '1', nameProf: '52-54'},
-        {id: '1', nameProf: '56-58'},
-        {id: '1', nameProf: '60-62'},
+        {id: '2', nameProf: '48-50'},
+        {id: '3', nameProf: '52-54'},
+        {id: '4', nameProf: '56-58'},
+        {id: '5', nameProf: '60-62'},
     ],
 }
 
