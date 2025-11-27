@@ -70,22 +70,23 @@ const workwearsSlice = createSlice({
   name: '@@workswears',
   initialState: valueUser,
   reducers: {
-    addWorkWear: (state, action) => {
-      state.push(action.payload)
-    // {
-    //   reducer: (state, action) => {
-    //     state.push(action.payload)
-    //   },
-      // @ts-ignore
-    //   prepare: (user) => ({
-    //     payload: {
-    //       surname: user.surname,
-    //       first_name: user.first_name,
-    //       patronymic: user.patronymic,
-    //       profession: user.profession,
-    //       id: nanoid()
-    //     }
-    //   })
+    addWorkWear: {
+      reducer: (state, action) => {
+        state.push(action.payload)
+      },
+     // @ts-ignore
+      prepare: (workswear) => ({
+        payload: {
+          typeWorkswear: workswear.typeWorkswear,
+          date_issue: workswear.date_issue,
+          wearing_period: workswear.wearing_period,
+          prise: workswear.prise,
+          residual_prise: 0,
+          size: workswear.size,
+          height: workswear.height,
+          id: nanoid()
+        }
+      })
     },
     removeWorkWear: (state, action) => {
       state.push(action.payload)
