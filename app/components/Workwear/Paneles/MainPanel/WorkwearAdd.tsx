@@ -34,6 +34,7 @@ export const WorkwearAdd =() => {
         <div>
             <h3>Главный</h3>
                 <h2>Выбор стоимости:</h2>
+                <input type="Text" placeholder="Тип СИЗ"></input>
                 <select
                     id="priceSelect"
                     name="selectedPriceValue" // Имя соответствует ключу в стейте formData
@@ -41,7 +42,7 @@ export const WorkwearAdd =() => {
                     onChange={handleChange} // Используем унифицированный обработчик
                     style={{ padding: '8px', borderRadius: '4px', border: '1px solid #ccc', minWidth: '120px' }}
                 >
-                    <option value="">-- Выберите размер --</option>
+                    <option value="">-- Выберите стоимость --</option>
                     {reference.prices.map((priceItem) => (
                         <option
                             value={priceItem.id}
