@@ -12,7 +12,9 @@ export const WorkwearAdd =() => {
     const [formData, setFormData] = useState({
         selectedSizeId: '',   // Соответствует name="selectedSizeId"
         selectedPriceValue: '', // Соответствует name="selectedPriceValue"
-        selectedColorId: '',    // Соответствует name="selectedColorId"
+        selectedTypeWorkswear: '',   
+        selectedWearingPeriods: '',   
+        selectedHeight: '',  
     });
 
     const handleChange = (event) => {
@@ -33,8 +35,25 @@ export const WorkwearAdd =() => {
     return (
         <div>
             <h3>Главный</h3>
+                <h2>Выбор типа СИЗ:</h2>
+                <select
+                    id="typeSelect"
+                    name="selectedTypeWorkswear" // Имя соответствует ключу в стейте formData
+                    value={formData.selectedTypeWorkswear}
+                    onChange={handleChange} // Используем унифицированный обработчик
+                    style={{ padding: '8px', borderRadius: '4px', border: '1px solid #ccc', minWidth: '120px' }}
+                >
+                    <option value="">-- Выберите тип СИЗ --</option>
+                    {reference.typesWorkswears.map((typesWorkswear) => (
+                        <option
+                            value={typesWorkswear.id}
+                            key={typesWorkswear.id}
+                        >
+                            {typesWorkswear.name}
+                        </option>
+                    ))}
+                </select>
                 <h2>Выбор стоимости:</h2>
-                <input type="Text" placeholder="Тип СИЗ"></input>
                 <select
                     id="priceSelect"
                     name="selectedPriceValue" // Имя соответствует ключу в стейте formData
@@ -52,12 +71,29 @@ export const WorkwearAdd =() => {
                         </option>
                     ))}
                 </select>
-            <input type="Text" placeholder="Период носки"></input>
-            <input type="Text" placeholder="Стоимость"></input>
-             <h2>Выбор размера:</h2>
+            <h2>Выбор периода носки:</h2>
+                <select
+                    id="wearingPeriodsSelect"
+                    name="selectedWearingPeriods" // Имя соответствует ключу в стейте formData
+                    value={formData.selectedWearingPeriods}
+                    onChange={handleChange} // Используем унифицированный обработчик
+                    style={{ padding: '8px', borderRadius: '4px', border: '1px solid #ccc', minWidth: '120px' }}
+                >
+                    <option value="">-- Выберите период носки --</option>
+                    {reference.wearingPeriods.map((wearingPeriodItem) => (
+                        <option
+                            value={wearingPeriodItem.id}
+                            key={wearingPeriodItem.id}
+                        >
+                            {wearingPeriodItem.period}
+                        </option>
+                    ))}
+                </select>
+  
+                         <h2>Выбор размера:</h2>
                 <select
                     id="sizeSelect"
-                    name="selectedSizeId" // Имя соответствует ключу в стейте formData
+                    name="selectedHeight" // Имя соответствует ключу в стейте formData
                     value={formData.selectedSizeId}
                     onChange={handleChange} // Используем унифицированный обработчик
                     style={{ padding: '8px', borderRadius: '4px', border: '1px solid #ccc', minWidth: '120px' }}
@@ -72,8 +108,24 @@ export const WorkwearAdd =() => {
                         </option>
                     ))}
                 </select>
-  
-            <input type="Text" placeholder="Рост"></input>
+             <h2>Выбор роста:</h2>
+                <select
+                    id=" heightSelect"
+                    name="selectedSizeId" // Имя соответствует ключу в стейте formData
+                    value={formData.selectedSizeId}
+                    onChange={handleChange} // Используем унифицированный обработчик
+                    style={{ padding: '8px', borderRadius: '4px', border: '1px solid #ccc', minWidth: '120px' }}
+                >
+                    <option value="">-- Выберите рост --</option>
+                    {reference. heights.map(( heightItem) => (
+                        <option
+                            value={ heightItem.id}
+                            key={ heightItem.id}
+                        >
+                            { heightItem.value}
+                        </option>
+                    ))}
+                </select>
             <button onClick={handleClickWorkswear}>Close</button>
         </div>
     )

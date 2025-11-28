@@ -24,11 +24,11 @@ const references = {
     prices :[
         {id: '1', value: 1000},
     ],
-    typesWorkswear : [
-        {id: '', name: ''}
+    typesWorkswears : [
+        {id: '1', name: 'Зимний костюм'}
     ],
-    wearingPeriod : [
-        {id: '', period: 0}
+    wearingPeriods : [
+        {id: '1', period: 2}
     ],
     sizes : [
         {id: '1', size: '44-46'},
@@ -37,8 +37,8 @@ const references = {
         {id: '4', size: '56-58'},
         {id: '5', size: '60-62'},
     ],
-    height : [
-        {id: '', nameProf: ''}
+    heights : [
+        {id: '1', value: '170-176'}
     ],
 }
 
