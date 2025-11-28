@@ -19,7 +19,7 @@ interface valueUser {
   height: string;
 }
 
-const now = new Date();
+const now =new Date().toLocaleDateString('en-EN');
 
 // interface danfWork {
 //   date_issue: Date; 
@@ -79,14 +79,14 @@ const workwearsSlice = createSlice({
      // @ts-ignore
       prepare: (workswear) => ({
         payload: {
-          idUser: workswear.idUser,
-          typeWorkswear: workswear.typeWorkswear,
+          idUser: 7, //workswear.idUser,???????? как переать?????
+          typeWorkswear: workswear.selectedTypeWorkswear,
           date_issue: now,
-          wearing_period: workswear.wearing_period,
-          prise: workswear.prise,
+          wearing_period: workswear.selectedWearingPeriods,
+          prise: workswear.selectedPriceValue,
           residual_prise: 0,
-          size: workswear.size,
-          height: workswear.height,
+          size: workswear.selectedSize,
+          height: workswear.selectedHeight,
           id: nanoid()
         }
       })

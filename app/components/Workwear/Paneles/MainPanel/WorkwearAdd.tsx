@@ -2,6 +2,7 @@ import React, {useState} from 'react'
 import {RootState} from '../../../../Store/store'
 import { useDispatch, useSelector} from 'react-redux'
 import {toggleWorkswear } from '../../../../Store/Slice/ModalWindowSlice'
+import {addWorkWear } from '../../../../Store/Slice/WorkwearSlice'
 
 
 export const WorkwearAdd =() => {
@@ -10,7 +11,7 @@ export const WorkwearAdd =() => {
     const reference = useSelector((state: RootState) => state.reference);
     
     const [formData, setFormData] = useState({
-        selectedSizeId: '',   // Соответствует name="selectedSizeId"
+        selectedSize: '',   // Соответствует name="selectedSizeId"
         selectedPriceValue: '', // Соответствует name="selectedPriceValue"
         selectedTypeWorkswear: '',   
         selectedWearingPeriods: '',   
@@ -24,12 +25,15 @@ export const WorkwearAdd =() => {
             ...prevFormData,        // Копируем предыдущее состояние
             [name]: value           // Обновляем только то поле, имя которого совпадает с name
         }));
-        console.log (value)
+        console.log (name, value)
     };
     
     
     const handleClickWorkswear =()=> {
         dispatch(toggleWorkswear(1))
+    }
+    const addWorkswear =()=> {
+        dispatch(addWorkWear(formData))
     }
     
     return (
@@ -93,8 +97,8 @@ export const WorkwearAdd =() => {
                          <h2>Выбор размера:</h2>
                 <select
                     id="sizeSelect"
-                    name="selectedHeight" // Имя соответствует ключу в стейте formData
-                    value={formData.selectedSizeId}
+                    name="selectedSize" // Имя соответствует ключу в стейте formData
+                    value={formData.selectedSize}
                     onChange={handleChange} // Используем унифицированный обработчик
                     style={{ padding: '8px', borderRadius: '4px', border: '1px solid #ccc', minWidth: '120px' }}
                     >
@@ -111,8 +115,8 @@ export const WorkwearAdd =() => {
              <h2>Выбор роста:</h2>
                 <select
                     id=" heightSelect"
-                    name="selectedSizeId" // Имя соответствует ключу в стейте formData
-                    value={formData.selectedSizeId}
+                    name="selectedHeight" // Имя соответствует ключу в стейте formData
+                    value={formData.selectedHeight}
                     onChange={handleChange} // Используем унифицированный обработчик
                     style={{ padding: '8px', borderRadius: '4px', border: '1px solid #ccc', minWidth: '120px' }}
                     >
@@ -126,6 +130,7 @@ export const WorkwearAdd =() => {
                         </option>
                     ))}
                 </select>
+            <button onClick={addWorkswear}>Submit</button>
             <button onClick={handleClickWorkswear}>Close</button>
         </div>
     )
