@@ -21,8 +21,8 @@ interface references {
 
 
 const references = {
-    price :[
-        {id: '', value: 0},
+    prices :[
+        {id: '1', value: 1000},
     ],
     typesWorkswear : [
         {id: '', name: ''}
