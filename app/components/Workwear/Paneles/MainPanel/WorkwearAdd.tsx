@@ -24,14 +24,14 @@ export const WorkwearAdd =() => {
             ...prevFormData,        // Копируем предыдущее состояние
             [name]: value           // Обновляем только то поле, имя которого совпадает с name
         }));
+        console.log (value)
     };
-
-    console.log (reference)
-
+    
+    
     const handleClickWorkswear =()=> {
-               dispatch(toggleWorkswear(1))
-         }
-
+        dispatch(toggleWorkswear(1))
+    }
+    
     return (
         <div>
             <h3>Главный</h3>
@@ -42,12 +42,12 @@ export const WorkwearAdd =() => {
                     value={formData.selectedTypeWorkswear}
                     onChange={handleChange} // Используем унифицированный обработчик
                     style={{ padding: '8px', borderRadius: '4px', border: '1px solid #ccc', minWidth: '120px' }}
-                >
+                    >
                     <option value="">-- Выберите тип СИЗ --</option>
                     {reference.typesWorkswears.map((typesWorkswear) => (
                         <option
-                            value={typesWorkswear.id}
-                            key={typesWorkswear.id}
+                        value={typesWorkswear.name}
+                        key={typesWorkswear.id}
                         >
                             {typesWorkswear.name}
                         </option>
@@ -60,12 +60,12 @@ export const WorkwearAdd =() => {
                     value={formData.selectedPriceValue}
                     onChange={handleChange} // Используем унифицированный обработчик
                     style={{ padding: '8px', borderRadius: '4px', border: '1px solid #ccc', minWidth: '120px' }}
-                >
+                    >
                     <option value="">-- Выберите стоимость --</option>
                     {reference.prices.map((priceItem) => (
                         <option
-                            value={priceItem.id}
-                            key={priceItem.id}
+                        value={priceItem.value}
+                        key={priceItem.id}
                         >
                             {priceItem.value}
                         </option>
@@ -78,12 +78,12 @@ export const WorkwearAdd =() => {
                     value={formData.selectedWearingPeriods}
                     onChange={handleChange} // Используем унифицированный обработчик
                     style={{ padding: '8px', borderRadius: '4px', border: '1px solid #ccc', minWidth: '120px' }}
-                >
+                    >
                     <option value="">-- Выберите период носки --</option>
                     {reference.wearingPeriods.map((wearingPeriodItem) => (
                         <option
-                            value={wearingPeriodItem.id}
-                            key={wearingPeriodItem.id}
+                        value={wearingPeriodItem.period}
+                        key={wearingPeriodItem.id}
                         >
                             {wearingPeriodItem.period}
                         </option>
@@ -97,12 +97,12 @@ export const WorkwearAdd =() => {
                     value={formData.selectedSizeId}
                     onChange={handleChange} // Используем унифицированный обработчик
                     style={{ padding: '8px', borderRadius: '4px', border: '1px solid #ccc', minWidth: '120px' }}
-                >
+                    >
                     <option value="">-- Выберите размер --</option>
                     {reference.sizes.map((sizeItem) => (
                         <option
-                            value={sizeItem.id}
-                            key={sizeItem.id}
+                        value={sizeItem.size}
+                        key={sizeItem.id}
                         >
                             {sizeItem.size}
                         </option>
@@ -115,12 +115,12 @@ export const WorkwearAdd =() => {
                     value={formData.selectedSizeId}
                     onChange={handleChange} // Используем унифицированный обработчик
                     style={{ padding: '8px', borderRadius: '4px', border: '1px solid #ccc', minWidth: '120px' }}
-                >
+                    >
                     <option value="">-- Выберите рост --</option>
                     {reference. heights.map(( heightItem) => (
                         <option
-                            value={ heightItem.id}
-                            key={ heightItem.id}
+                        value={ heightItem.value}
+                        key={ heightItem.id}
                         >
                             { heightItem.value}
                         </option>
