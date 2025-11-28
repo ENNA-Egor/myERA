@@ -1,4 +1,7 @@
 import { createSlice, nanoid} from '@reduxjs/toolkit'
+// import { useSelector} from 'react-redux'
+// import {RootState} from  '../../Store/store';
+// const idSelectedUser = useSelector((state: RootState) => state.modal.idSelectedUser);
 
 
 // interface valueUser {
@@ -77,9 +80,9 @@ const workwearsSlice = createSlice({
         state.push(action.payload)
       },
      // @ts-ignore
-      prepare: (workswear) => ({
+      prepare: (workswear, idSelectedUser) => ({
         payload: {
-          idUser: 7, //workswear.idUser,???????? как переать?????
+          idUser: idSelectedUser,//7, //workswear.idUser,???????? как переать?????
           typeWorkswear: workswear.selectedTypeWorkswear,
           date_issue: now,
           wearing_period: workswear.selectedWearingPeriods,

@@ -1,24 +1,26 @@
 // src/components/ButtonCls.tsx
 import React, {useState, useEffect} from 'react';
-import {RootState} from '../../../../Store/store'
+import {RootState} from '../../../../Store/store';
 import { useDispatch, useSelector} from 'react-redux'
 import { toggleModal, toggleWorkswear } from '../../../../Store/Slice/ModalWindowSlice'
 import { statusUserChecked } from '../../../../Store/Slice/UserSlice'
 
 
 export const ModalPanel =() => {
-     const selectId = useSelector((state: RootState) => state.modal.visibleID);
-     const selectUserAll = useSelector((state: RootState) => state.users);
-     const selectWorkswearAll = useSelector((state: RootState) => state.workswears);
-      const selectedUser = selectUserAll.find(user => user.id === selectId);
-     const dispatch = useDispatch();
-     const handleClickModal =()=> {
-           dispatch(toggleModal(0))
-     }
-     const handleClickWorkswear =()=> {
-           dispatch(toggleWorkswear(1))
-     }
-
+  const selectId = useSelector((state: RootState) => state.modal.visibleID);
+  const selectUserAll = useSelector((state: RootState) => state.users);
+  const selectWorkswearAll = useSelector((state: RootState) => state.workswears);
+  const selectedUser = selectUserAll.find(user => user.id === selectId);
+  const dispatch = useDispatch();
+ 
+ 
+  const handleClickModal =()=> {
+    dispatch(toggleModal(0))
+  }
+  
+  const handleClickWorkswear =()=> {
+        dispatch(toggleWorkswear( selectId))
+  }
 
 
      const [objArr, setValue] = useState(selectWorkswearAll);

@@ -6,6 +6,7 @@ interface ModalState {
   visibleID: number;
   workwearVisible: boolean;
   visibleWorkwear: number;
+  idSelectedUser: string;
 }
 
 
@@ -13,7 +14,8 @@ const ModalState = {
   isVisible: false,
   visibleID: 0, 
   workwearVisible:false,
-  visibleWorkwear: 1, 
+  visibleWorkwear: 1,
+  idSelectedUser: '', 
 };
 
 
@@ -24,6 +26,8 @@ const toggleVisibleModal = createSlice({
     toggleModal:(state, action) => {
        state.isVisible = ! state.isVisible; // <-- Мутируем свойство объекта
         state.visibleID = action.payload;
+        state.idSelectedUser = action.payload;
+        console.log (state.idSelectedUser)
     },
     toggleWorkswear:(state, action) => {
        state.workwearVisible = ! state.workwearVisible; // <-- Мутируем свойство объекта

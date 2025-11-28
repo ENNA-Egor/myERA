@@ -9,6 +9,8 @@ export const WorkwearAdd =() => {
     const dispatch = useDispatch();
 
     const reference = useSelector((state: RootState) => state.reference);
+    const idSelectedUser = useSelector((state: RootState) => state.modal.idSelectedUser);
+
     
     const [formData, setFormData] = useState({
         selectedSize: '',   // Соответствует name="selectedSizeId"
@@ -33,7 +35,7 @@ export const WorkwearAdd =() => {
         dispatch(toggleWorkswear(1))
     }
     const addWorkswear =()=> {
-        dispatch(addWorkWear(formData))
+        dispatch(addWorkWear(formData, idSelectedUser))
     }
     
     return (
