@@ -26,8 +26,7 @@ export const WorkwearAdd =() => {
         setFormData(prevFormData => ({
             ...prevFormData,        // Копируем предыдущее состояние
             [name]: value           // Обновляем только то поле, имя которого совпадает с name
-        }));
-        console.log (name, value)
+        }));       
     };
     
     

@@ -27,7 +27,6 @@ const toggleVisibleModal = createSlice({
        state.isVisible = ! state.isVisible; // <-- Мутируем свойство объекта
         state.visibleID = action.payload;
         state.idSelectedUser = action.payload;
-        console.log (state.idSelectedUser)
     },
     toggleWorkswear:(state, action) => {
        state.workwearVisible = ! state.workwearVisible; // <-- Мутируем свойство объекта

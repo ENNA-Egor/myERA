@@ -36,8 +36,7 @@ export const FulListPanel = () => {
   return (
     <div className="user-table-container">
       <h2>Полный список работников</h2>
-      <input type='check'></input>
-
+      <br></br>
         <table className="user-table">
           <thead>
             <tr>
