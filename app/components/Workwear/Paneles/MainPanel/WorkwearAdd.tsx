@@ -32,13 +32,25 @@ export const WorkwearAdd =() => {
     
     const handleClickWorkswear =()=> {
         dispatch(toggleWorkswear(1))
+        setFormData ({
+        selectedSize: '',   // Соответствует name="selectedSizeId"
+        selectedPriceValue: '', // Соответствует name="selectedPriceValue"
+        selectedTypeWorkswear: '',   
+        selectedWearingPeriods: '',   
+        selectedHeight: '',  
+        })
     }
     const addWorkswear =()=> {
         dispatch(addWorkWear(formData, idSelectedUser))
     }
+
+     const handleSubmit = (event) => {
+    event.preventDefault();
+    event.target.reset();
+  };
     
     return (
-        <div>
+        <form  onSubmit={handleSubmit}>
             <h3>Главный</h3>
                 <h2>Выбор типа СИЗ:</h2>
                 <select
@@ -133,6 +145,6 @@ export const WorkwearAdd =() => {
                 </select>
             <button onClick={addWorkswear}>Submit</button>
             <button onClick={handleClickWorkswear}>Close</button>
-        </div>
+        </form>
     )
 }
