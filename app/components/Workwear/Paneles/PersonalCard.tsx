@@ -13,9 +13,11 @@ export const PersonalCard = () => {
     first_name: "",
     patronymic: "",
     profession: "",
+    status: "",
   };
 
-  const [user, setUser] = useState(initialNewUsers);
+
+  const [newUser, setNewUser] = useState(initialNewUsers);
   const [users, setUsers] = useState(allUsers);
   const [searchTerm, setSearchTerm] = useState('');
 
@@ -25,10 +27,10 @@ export const PersonalCard = () => {
     ? users.filter((user) => {
       const searchLower = searchTerm.toLowerCase();
       const surnameLower = user.surname.toLowerCase();
-      // const firstNameLower = user.first_name.toLowerCase();
+      const userStatus = user.status;
 
-      // return surnameLower.includes(searchLower) || firstNameLower.includes(searchLower);
-      return surnameLower.includes(searchLower);
+      return surnameLower.includes(searchLower) && !userStatus;
+      // return surnameLower.includes(searchLower);
     })
     : [];
 
@@ -36,8 +38,8 @@ export const PersonalCard = () => {
   const dispatch = useDispatch();
 
   const handleChange = (event) => {
-    setUser({
-      ...user,
+    setNewUser({
+      ...newUser,
       [event.target.name]: event.target.value,
     });
     setSearchTerm(event.target.value);
@@ -49,6 +51,13 @@ export const PersonalCard = () => {
 
 
     const handleSurnameClick = (user) => {
+      setNewUser ({
+        surname: user.surname,
+        first_name: user.first_name,
+        patronymic: user.patronymic,
+        profession: user.profession,
+        status: user.status,
+      });
       // setSelectedUserMessage(`Выбран пользователь: ${user.surname} ${user.first_name}`);
       //  dispatch(toggleModal(user.id))
     };
@@ -60,9 +69,11 @@ export const PersonalCard = () => {
     // если dispatch асинхронный (thunk) и вы хотите ждать результата:
     // await dispatch(addUser(user));
 
-    dispatch(addUser(user)); // отправляем
-    setUser(initialNewUsers); // очищаем форму
+    dispatch(addUser(newUser)); // отправляем
+    setNewUser(initialNewUsers); // очищаем форму
   };
+
+
 
   return (
     <div className="persCard">
@@ -75,7 +86,7 @@ export const PersonalCard = () => {
             type="text"
             className="inputCard"
             name="surname"
-            value={user.surname}
+            value={newUser.surname}
             onChange={handleChange}
           />
         </label>
@@ -88,7 +99,7 @@ export const PersonalCard = () => {
             type="text"
             className="inputCard"
             name="first_name"
-            value={user.first_name}
+            value={newUser.first_name}
             onChange={handleChange}
           />
         </label>
@@ -101,7 +112,7 @@ export const PersonalCard = () => {
             type="text"
             className="inputCard"
             name="patronymic"
-            value={user.patronymic}
+            value={newUser.patronymic}
             onChange={handleChange}
           />
         </label>
@@ -114,7 +125,7 @@ export const PersonalCard = () => {
             type="text"
             className="inputCard"
             name="profession"
-            value={user.profession}
+            value={newUser.profession}
             onChange={handleChange}
           />
         </label>
@@ -149,6 +160,7 @@ export const PersonalCard = () => {
                 <th>Фамилия</th>
                 <th>Имя</th>
                 <th>Отчество</th>
+                <th>Статус</th>
               </tr>
             </thead>
             <tbody>
@@ -165,6 +177,9 @@ export const PersonalCard = () => {
                   </td>
                   <td className='tableStyle'>{user.first_name}</td>
                   <td className='tableStyle'>{user.patronymic}</td>
+                  <td className='tableStyle'>{!user.status ? 'Работает' : 'Уволен'}
+                     <input type='checkbox' className='checkStyle' checked={user.status || false} ></input>
+                  </td>
                 </tr>
               ))}
             </tbody>
