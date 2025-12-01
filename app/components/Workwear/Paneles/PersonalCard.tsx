@@ -1,5 +1,5 @@
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {RootState} from '../../../Store/store'
 import { addUser } from "../../../Store/Slice/UserSlice";
@@ -21,7 +21,9 @@ export const PersonalCard = () => {
   const [users, setUsers] = useState(allUsers);
   const [searchTerm, setSearchTerm] = useState('');
 
-  // const [selectedUserMessage, setSelectedUserMessage] = useState('');
+        useEffect(() => {  
+            setUsers(allUsers); 
+          }, [allUsers])
 
   const filteredUsers = searchTerm
     ? users.filter((user) => {
@@ -29,7 +31,7 @@ export const PersonalCard = () => {
       const surnameLower = user.surname.toLowerCase();
       const userStatus = user.status;
 
-      return surnameLower.includes(searchLower) && !userStatus;
+      return surnameLower.includes(searchLower) && userStatus;
       // return surnameLower.includes(searchLower);
     })
     : [];
@@ -45,9 +47,7 @@ export const PersonalCard = () => {
     setSearchTerm(event.target.value);
   };
 
-  //   const handleSearchChange = (event) => {
-  //   setSearchTerm(event.target.value);
-  // };
+
 
 
     const handleSurnameClick = (user) => {
@@ -58,19 +58,12 @@ export const PersonalCard = () => {
         profession: user.profession,
         status: user.status,
       });
-      // setSelectedUserMessage(`Выбран пользователь: ${user.surname} ${user.first_name}`);
-      //  dispatch(toggleModal(user.id))
     };
 
   const handleSubmit = async () => {
-    // если кнопка внутри <form>, то нужно event.preventDefault()
-    // event.preventDefault();
-
-    // если dispatch асинхронный (thunk) и вы хотите ждать результата:
-    // await dispatch(addUser(user));
-
     dispatch(addUser(newUser)); // отправляем
     setNewUser(initialNewUsers); // очищаем форму
+    setSearchTerm ('')
   };
 
 
@@ -132,24 +125,7 @@ export const PersonalCard = () => {
       </div>
 
              <div className="user-table-container">
-      <h2>Поиск работнников</h2>
-
-      {/* <div className="search-bar">
-        <input
-          type="text"
-          placeholder="Введите запрос для поиска по фамилии или имени..."
-          value={searchTerm}
-          onChange={handleSearchChange}
-          className="search-input"
-        />
-      </div> */}
-
-      {/* --- Отображение сообщения о выборе пользователя --- */}
-      {/* {selectedUserMessage && (
-        <div className="user-selection-message">
-          {selectedUserMessage}
-        </div>
-      )} */}
+     
 
       {searchTerm ? (
         filteredUsers.length > 0 ? (
