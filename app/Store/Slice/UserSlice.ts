@@ -35,6 +35,7 @@ const userSlice = createSlice({
           first_name: user.first_name,
           patronymic: user.patronymic,
           profession: user.profession,
+          status: false,
           id: nanoid()
         }
       })

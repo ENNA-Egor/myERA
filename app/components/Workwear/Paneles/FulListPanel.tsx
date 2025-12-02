@@ -26,12 +26,12 @@ export const FulListPanel = () => {
 
   useEffect(() => {
       setUsers(initialUsers);
-      // setStatus(userStatusChect);
+      setStatus(userStatusChect);
     }, [initialUsers, userStatusChect]);
  
   // Состояние для хранения полного списка пользователей
   const [users, setUsers] = useState(realUsers);
-  // const [status, setStatus] = useState(userStatusChect);
+  const [status, setStatus] = useState(userStatusChect);
 
     // const checkedHandle = () =>{
     //     dispatch (statusUserChecked(user.id))

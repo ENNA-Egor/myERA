@@ -133,7 +133,6 @@ export const PersonalCard = () => {
           <table className="user-table">
             <thead>
               <tr>
-                {/* <th>ID</th> */}
                 <th>Фамилия</th>
                 <th>Имя</th>
                 <th>Отчество</th>
@@ -143,7 +142,6 @@ export const PersonalCard = () => {
             <tbody>
               {filteredUsers.map((user) => (
                 <tr key={user.id} >
-                  {/* <td>{user.id}</td> */}
                   <td className='tableStyle'>
                     <span
                       className="clickable-surname"
@@ -155,7 +153,7 @@ export const PersonalCard = () => {
                   <td className='tableStyle'>{user.first_name}</td>
                   <td className='tableStyle'>{user.patronymic}</td>
                   <td className='tableStyle'>{!user.status ? 'Работает' : 'Уволен'}
-                     <input type='checkbox' className='checkStyle' checked={user.status || false} ></input>
+                     {/* <input type='checkbox' className='checkStyle' checked={user.status || false} ></input> */}
                   </td>
                 </tr>
               ))}
