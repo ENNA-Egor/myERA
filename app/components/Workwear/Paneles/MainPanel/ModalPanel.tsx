@@ -23,9 +23,6 @@ export const ModalPanel =() => {
   }
 
 
-    const [isDisabled, setIsDisabled] = useState(false);
-
-
      const [objArr, setValue] = useState(selectWorkswearAll);
 
      const selectedUserWworkswear = objArr.filter(workswear => workswear.idUser === selectId);
@@ -123,7 +120,7 @@ export const ModalPanel =() => {
             </tbody>
           </table> 
         <button name="btnCls" className='allBtn btnMenu' onClick={handleClickModal} >Закрыть</button>
-        <button name="btnCls" className='allBtn btnMenu' onClick={handleClickWorkswear} disabled={isDisabled}>Добавить</button>
+        <button name="btnCls" className='allBtn btnMenu' onClick={handleClickWorkswear} disabled={selectedUser?.status}>Добавить</button>
 
     </div>
     )

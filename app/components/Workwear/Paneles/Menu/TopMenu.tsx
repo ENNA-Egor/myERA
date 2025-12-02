@@ -12,7 +12,7 @@ export const TopMenu =()=>{
             <label>
                 <input
                 type="checkbox"
-                checked={true}
+                checked={false}
                 // onChange={handleCheckboxChange}
                 />
                 Не показывать уволеных
