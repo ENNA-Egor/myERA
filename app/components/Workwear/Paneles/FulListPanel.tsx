@@ -10,15 +10,13 @@ import { statusUserChecked } from '../../../Store/Slice/UserSlice'
 import {TopMenu} from './Menu/TopMenu'
 
 export const FulListPanel = () => {
-  const userStatusChect = useSelector(( state:RootState)=> state.modal.userVisible)
-  console.log (userStatusChect)
+  const userStatusChect = useSelector(( state:RootState)=> state.modal.userVisible);
 
   const dispatch = useDispatch();
   const initialUsers = useSelector((state:RootState)=> state.users)
-  const initialLimitUsers =initialUsers.filter(user => user.status === true);
-  // const initialUsers = (userStatusChect ?  initialLimitUsers: Users );
+  const initialLimitUsers =initialUsers.filter(user => user.status === false);
+  const realUsers = (!userStatusChect ?  initialUsers:initialLimitUsers );
   
-  console.log (initialLimitUsers)
   
 
   const handleSurnameClick = (user) => {
@@ -58,7 +56,7 @@ export const FulListPanel = () => {
             </tr>
           </thead>
           <tbody>
-            {users.map((user) => (
+            {realUsers.map((user) => (
               <tr key={user.id}>
                 {/* <td>{user.id}</td> */}
                 <td >
