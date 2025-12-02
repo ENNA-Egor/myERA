@@ -21,9 +21,10 @@ export const PersonalCard = () => {
   const [users, setUsers] = useState(allUsers);
   const [searchTerm, setSearchTerm] = useState('');
 
-        useEffect(() => {  
-            setUsers(allUsers); 
-          }, [allUsers])
+   useEffect(() => {  
+      setUsers(allUsers); 
+   }, [allUsers])
+
 
   const filteredUsers = searchTerm
     ? users.filter((user) => {

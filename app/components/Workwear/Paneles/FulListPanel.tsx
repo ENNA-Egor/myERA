@@ -7,6 +7,8 @@ import { toggleModal } from '../../../Store/Slice/ModalWindowSlice'
 import {RootState} from '../../../Store/store'
 import { statusUserChecked } from '../../../Store/Slice/UserSlice'
 
+import {TopMenu} from './Menu/TopMenu'
+
 export const FulListPanel = () => {
 
   const dispatch = useDispatch();
@@ -35,6 +37,7 @@ export const FulListPanel = () => {
 
   return (
     <div className="user-table-container">
+      <TopMenu/>
       <h2>Полный список работников</h2>
       <br></br>
         <table className="user-table">

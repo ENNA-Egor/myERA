@@ -69,6 +69,7 @@ export const MainPanel = () => {
                 <th>Фамилия</th>
                 <th>Имя</th>
                 <th>Отчество</th>
+                <th>Статус</th>
               </tr>
             </thead>
             <tbody>
@@ -85,6 +86,7 @@ export const MainPanel = () => {
                   </td>
                   <td className='tableStyle'>{user.first_name}</td>
                   <td className='tableStyle'>{user.patronymic}</td>
+                  <td className='tableStyle'>{!user.status ? 'Работает' : 'Уволен'}</td>
                 </tr>
               ))}
             </tbody>
