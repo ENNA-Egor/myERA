@@ -24,12 +24,14 @@ export const FulListPanel = () => {
     };
 
 
-  // useEffect(() => {
-  //     setUsers(initialUsers);
-  //   }, [initialUsers]);
+  useEffect(() => {
+      setUsers(initialUsers);
+      // setStatus(userStatusChect);
+    }, [initialUsers, userStatusChect]);
  
   // Состояние для хранения полного списка пользователей
-  // const [users, setUsers] = useState(initialUsers);
+  const [users, setUsers] = useState(realUsers);
+  // const [status, setStatus] = useState(userStatusChect);
 
     // const checkedHandle = () =>{
     //     dispatch (statusUserChecked(user.id))
