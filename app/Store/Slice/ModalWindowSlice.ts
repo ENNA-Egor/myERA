@@ -6,6 +6,8 @@ interface ModalState {
   visibleID: number;
   workwearVisible: boolean;
   visibleWorkwear: number;
+  userVisible: boolean;
+  visiblUser: number;
   idSelectedUser: string;
 }
 
@@ -16,6 +18,8 @@ const ModalState = {
   workwearVisible:false,
   visibleWorkwear: 1,
   idSelectedUser: '', 
+  userVisible: false,
+  visibleUser: 2,
 };
 
 
@@ -32,11 +36,15 @@ const toggleVisibleModal = createSlice({
        state.workwearVisible = ! state.workwearVisible; // <-- Мутируем свойство объекта
         state.visibleWorkwear = action.payload;
     },
+    toggleVisibleUser:(state, action) => {
+       state.userVisible = ! state.userVisible; // <-- Мутируем свойство объекта
+        state.visibleUser = action.payload;
+    },
     
   }
 })
 
 
-export const {toggleModal, toggleWorkswear} = toggleVisibleModal.actions
+export const {toggleModal, toggleWorkswear, toggleVisibleUser} = toggleVisibleModal.actions
 
 export default toggleVisibleModal.reducer
