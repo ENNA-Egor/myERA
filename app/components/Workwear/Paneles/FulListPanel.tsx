@@ -10,9 +10,16 @@ import { statusUserChecked } from '../../../Store/Slice/UserSlice'
 import {TopMenu} from './Menu/TopMenu'
 
 export const FulListPanel = () => {
+  const userStatusChect = useSelector(( state:RootState)=> state.modal.userVisible)
+  console.log (userStatusChect)
 
   const dispatch = useDispatch();
   const initialUsers = useSelector((state:RootState)=> state.users)
+  const initialLimitUsers =initialUsers.filter(user => user.status === true);
+  // const initialUsers = (userStatusChect ?  initialLimitUsers: Users );
+  
+  console.log (initialLimitUsers)
+  
 
   const handleSurnameClick = (user) => {
        dispatch(toggleModal(user.id))
