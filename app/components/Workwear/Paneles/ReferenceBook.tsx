@@ -1,6 +1,7 @@
 import React from "react"
 
 import myImage from '../../../assets/edit-button-svgrepo-com.svg';
+// import {EditIcon} from '../Icons/icons'
 
 
 
@@ -14,13 +15,13 @@ export const ReferenceBook =() => {
         <div>
             <h3>Справочники</h3>
             <input type="Text"></input>
-            <span
+            <button
                       className="clickable-surname"
                       onClick={() => buttonClisk()}
                     >
                  <img src={myImage}  className="imgButton allBtn"/>
-                    </span>
-
+                    </button>
+            {/* <EditIcon size={125} fill= 'rgb(51, 51, 51)' color= 'rgb(51, 51, 51)'/> */}
         </div>
     )
 }

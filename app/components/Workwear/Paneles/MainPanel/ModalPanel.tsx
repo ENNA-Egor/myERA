@@ -4,7 +4,7 @@ import {RootState} from '../../../../Store/store';
 import { useDispatch, useSelector} from 'react-redux'
 import { toggleModal, toggleWorkswear } from '../../../../Store/Slice/ModalWindowSlice'
 import { statusUserChecked } from '../../../../Store/Slice/UserSlice'
-import {DeleteIcon} from '../../Icon/icon'
+import {DeleteIcon} from '../../Icons/icons'
 // import { ReactComponent as CustomIcon } from '../../../../assets/edit-button-svgrepo-com.svg'; 
 
 
