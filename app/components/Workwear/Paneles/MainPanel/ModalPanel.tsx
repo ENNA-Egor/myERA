@@ -56,6 +56,11 @@ export const ModalPanel =() => {
       dispatch (statusUserChecked(selectedUser?.id))
   }
 
+
+  const delSiz= (el)=> {
+    console.log (el)
+  }
+
      return (
     <div >
         <h2>Лична карточка </h2>
@@ -108,8 +113,10 @@ export const ModalPanel =() => {
                   <td> 
                     <input type='checkbox' checked={selected.fixStatus}></input>
                   </td>
-                  <td> 
-                    <DeleteIcon size={38} fill= 'rgb(72, 79, 83)'/>
+                  <td className='img-viev' onClick={() => delSiz(selected.id)}> 
+                    {/* <button className='btn-delete'> */}
+                      <DeleteIcon size={48} fill= 'rgb(72, 79, 83)'/>
+                    {/* </button> */}
                     {/* <RemoveIcon size={38} fill= 'rgb(44, 44, 44)'/> */}
                   </td>
                 </tr>
