@@ -109,7 +109,7 @@ export const ModalPanel =() => {
                     <input type='checkbox' checked={selected.fixStatus}></input>
                   </td>
                   <td> 
-                    <DeleteIcon size={38} fill= '#e7e7e7'/>
+                    <DeleteIcon size={38} fill= 'rgb(72, 79, 83)'/>
                     {/* <RemoveIcon size={38} fill= 'rgb(44, 44, 44)'/> */}
                   </td>
                 </tr>
