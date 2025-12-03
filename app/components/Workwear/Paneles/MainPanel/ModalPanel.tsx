@@ -4,7 +4,7 @@ import {RootState} from '../../../../Store/store';
 import { useDispatch, useSelector} from 'react-redux'
 import { toggleModal, toggleWorkswear } from '../../../../Store/Slice/ModalWindowSlice'
 import { statusUserChecked } from '../../../../Store/Slice/UserSlice'
-import {DeleteIcon} from '../../Icons/icons'
+import {DeleteIcon, RemoveIcon} from '../../Icons/icons'
 // import { ReactComponent as CustomIcon } from '../../../../assets/edit-button-svgrepo-com.svg'; 
 
 
@@ -110,6 +110,7 @@ export const ModalPanel =() => {
                   </td>
                   <td> 
                     <DeleteIcon size={38} fill= '#e7e7e7'/>
+                    {/* <RemoveIcon size={38} fill= 'rgb(44, 44, 44)'/> */}
                   </td>
                 </tr>
               ))}
