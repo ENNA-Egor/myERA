@@ -4,6 +4,8 @@ import {RootState} from '../../../../Store/store';
 import { useDispatch, useSelector} from 'react-redux'
 import { toggleModal, toggleWorkswear } from '../../../../Store/Slice/ModalWindowSlice'
 import { statusUserChecked } from '../../../../Store/Slice/UserSlice'
+import {DeleteIcon} from '../../Icon/icon'
+// import { ReactComponent as CustomIcon } from '../../../../assets/edit-button-svgrepo-com.svg'; 
 
 
 export const ModalPanel =() => {
@@ -87,10 +89,10 @@ export const ModalPanel =() => {
                 <th>Дата выдачи</th>
                 <th>Срок носки</th>
                 <th>Стоимость</th>
-                <th>Остаточная стоимость</th>
+                <th>Остаток</th>
                 <th>Размер</th>
                 <th>Рост</th>
-                <th>Фиксировать данные</th>
+                <th>Фиксировать</th>
               </tr>
             </thead>
             <tbody>
@@ -104,7 +106,10 @@ export const ModalPanel =() => {
                   <td>{selected.size}</td>
                   <td>{selected.height}</td>
                   <td> 
-                    {/* <input type='checkbox' checked={selected.status}></input> */}
+                    <input type='checkbox' checked={selected.fixStatus}></input>
+                  </td>
+                  <td> 
+                    <DeleteIcon size={38} fill= '#e7e7e7'/>
                   </td>
                 </tr>
               ))}
@@ -120,7 +125,7 @@ export const ModalPanel =() => {
             </tbody>
           </table> 
         <button name="btnCls" className='allBtn btnMenu' onClick={handleClickModal} >Закрыть</button>
-        <button name="btnCls" className='allBtn btnMenu' onClick={handleClickWorkswear} disabled={selectedUser?.status}>Добавить</button>
+        <button name="btnAdd" className='allBtn btnMenu' onClick={handleClickWorkswear} disabled={selectedUser?.status}>Добавить</button>
 
     </div>
     )

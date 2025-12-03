@@ -84,7 +84,7 @@ a:not([class]) {
 }
 
 .levtMenu {
-  background-color: rgb(51, 51, 51);
+  background-color: #2e2e2e;
   width: 10%;
   height: 89vh;
 }
@@ -96,11 +96,11 @@ a:not([class]) {
 
 .btnMenu {
   color: antiquewhite;
-  background-color: rgb(51, 51, 51);
+  background-color: #2e2e2e;
 }
 
 .active {
-  background-color: rgb(51, 51, 51);
+  background-color: #2e2e2e;
   color: aqua;
 }
 
