@@ -20,3 +20,9 @@
    background-color: $background-button-color;
    color: $text-color;
 }
+
+.editMenu {
+    @extend .btnMenu;
+    width: 30px;
+    height:30px;
+}

@@ -94,7 +94,7 @@ a:not([class]) {
   flex-direction: column;
 }
 
-.btnMenu {
+.btnMenu, .editMenu {
   color: antiquewhite;
   background-color: rgb(51, 51, 51);
 }
@@ -102,6 +102,11 @@ a:not([class]) {
 .active {
   background-color: rgb(51, 51, 51);
   color: aqua;
+}
+
+.editMenu {
+  width: 30px;
+  height: 30px;
 }
 
 .allBtn {
