@@ -21,7 +21,7 @@ export const ReferenceBook =() => {
                     >
                  <img src={myImage}  className="imgButton allBtn"/>
                     </button>
-            {/* <EditIcon size={125} fill= 'rgb(51, 51, 51)' color= 'rgb(51, 51, 51)'/> */}
+            {/* <EditIcon size={25} fill= 'rgb(51, 51, 51)' color= 'rgb(51, 51, 51)'/> */}
         </div>
     )
 }
