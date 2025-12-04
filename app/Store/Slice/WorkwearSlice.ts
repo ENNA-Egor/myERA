@@ -61,12 +61,13 @@ const workwearsSlice = createSlice({
       })
     },
     removeWorkWear: (state, action) => {
-      state.push(action.payload)
-      console.log ('12345')
+      const id = action.payload;
+      return state.filter((worcwear)=> worcwear.id !== id)
     },
     workWearStatusFix: (state, action) => {
-      state.push(action.payload)
-      console.log ('67890')
+      // const id = action.payload;
+      // const fixStatus = state.find((fixStatus)=> fixStatus.id ===id);
+      // state.fixStatus = !fixStatus?.fixStatus
     },
   },
 })
