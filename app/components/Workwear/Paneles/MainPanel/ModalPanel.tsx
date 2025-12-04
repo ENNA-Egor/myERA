@@ -4,7 +4,7 @@ import {RootState} from '../../../../Store/store';
 import { useDispatch, useSelector} from 'react-redux'
 import { toggleModal, toggleWorkswear } from '../../../../Store/Slice/ModalWindowSlice'
 import { statusUserChecked } from '../../../../Store/Slice/UserSlice'
-import {removeWorkWear, workWearStatusFix} from '../../../../Store/Slice/WorkwearSlice'
+import {removeWorkWear, workWearStatusFix, workWearFinPrise} from '../../../../Store/Slice/WorkwearSlice'
 import {DeleteIcon} from '../../Icons/icons'
 // import { ReactComponent as CustomIcon } from '../../../../assets/edit-button-svgrepo-com.svg'; 
 
@@ -53,14 +53,16 @@ export const ModalPanel =() => {
 
   const [residualSumm, setResidualSumm] = useState(0);
   
-  const residual_p =(prise, period, start_date) => {
+  const residual_p =(prise, period, start_date, id?: string) => {
     const endDate = new Date();
     //  const endDate = new Date(new Date().toDateString());
       const startDate = new Date(start_date);;
       const differenceInMilliseconds = endDate.getTime() - startDate.getTime();
       const millisecondsPerDay = 1000 * 60 * 60 * 24;
       const differenceInDays = Math.round(differenceInMilliseconds / millisecondsPerDay);
-    return Math.round((prise * (period*365 -differenceInDays)/(period*365))/10)*10;
+      const finprise = Math.round((prise * (period*365 -differenceInDays)/(period*365))/10)*10;
+      dispatch (workWearFinPrise(finprise, id))
+    return finprise
   }
 
   const checkedHandle = () =>{
@@ -115,7 +117,7 @@ export const ModalPanel =() => {
                   <td> { selected.date_issue} </td>
                   <td>{ selected.wearing_period}</td>
                   <td>{ selected.prise}</td>
-                  <td>{residual_p(selected.prise, selected.wearing_period, selected.date_issue)}</td>
+                  <td>{residual_p(selected.prise, selected.wearing_period, selected.date_issue, selected.id)}</td>
                   <td>{selected.size}</td>
                   <td>{selected.height}</td>
                   <td> 
