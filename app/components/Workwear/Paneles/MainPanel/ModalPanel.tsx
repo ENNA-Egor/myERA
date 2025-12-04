@@ -61,7 +61,7 @@ export const ModalPanel =() => {
       const millisecondsPerDay = 1000 * 60 * 60 * 24;
       const differenceInDays = Math.round(differenceInMilliseconds / millisecondsPerDay);
       const finprise = Math.round((prise * (period*365 -differenceInDays)/(period*365))/10)*10;
-      dispatch (workWearFinPrise(finprise, id))
+      dispatch (workWearFinPrise({finprise, id}))
     return finprise
   }
 
