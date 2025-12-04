@@ -62,11 +62,16 @@ const workwearsSlice = createSlice({
     },
     removeWorkWear: (state, action) => {
       state.push(action.payload)
+      console.log ('12345')
+    },
+    workWearStatusFix: (state, action) => {
+      state.push(action.payload)
+      console.log ('67890')
     },
   },
 })
 
 
-export const { addWorkWear, removeWorkWear} = workwearsSlice.actions
+export const { addWorkWear, removeWorkWear, workWearStatusFix } = workwearsSlice.actions
 
 export default workwearsSlice.reducer

@@ -4,7 +4,8 @@ import {RootState} from '../../../../Store/store';
 import { useDispatch, useSelector} from 'react-redux'
 import { toggleModal, toggleWorkswear } from '../../../../Store/Slice/ModalWindowSlice'
 import { statusUserChecked } from '../../../../Store/Slice/UserSlice'
-import {DeleteIcon, RemoveIcon} from '../../Icons/icons'
+import {removeWorkWear, workWearStatusFix} from '../../../../Store/Slice/WorkwearSlice'
+import {DeleteIcon} from '../../Icons/icons'
 // import { ReactComponent as CustomIcon } from '../../../../assets/edit-button-svgrepo-com.svg'; 
 
 
@@ -22,6 +23,16 @@ export const ModalPanel =() => {
   
   const handleClickWorkswear =()=> {
         dispatch(toggleWorkswear( selectId))
+  }
+  
+  const handleClickWorkswearStatusFix =(el)=> {
+        dispatch(workWearStatusFix(el))
+          console.log (el)
+  }
+
+  const handleClickRemoveWorkswear =(el)=> {
+        dispatch(removeWorkWear( el))
+          console.log (el)
   }
 
 
@@ -57,9 +68,6 @@ export const ModalPanel =() => {
   }
 
 
-  const delSiz= (el)=> {
-    console.log (el)
-  }
 
      return (
     <div >
@@ -111,9 +119,9 @@ export const ModalPanel =() => {
                   <td>{selected.size}</td>
                   <td>{selected.height}</td>
                   <td> 
-                    <input type='checkbox' checked={selected.fixStatus}></input>
+                    <input type='checkbox' checked={selected.fixStatus} onChange={() => handleClickWorkswearStatusFix(selected.id)}></input>
                   </td>
-                  <td className='img-viev' onClick={() => delSiz(selected.id)}> 
+                  <td className='img-viev' onClick={() => handleClickRemoveWorkswear(selected.id)}> 
                     {/* <button className='btn-delete'> */}
                       <DeleteIcon size={48} fill= 'rgb(72, 79, 83)'/>
                     {/* </button> */}
