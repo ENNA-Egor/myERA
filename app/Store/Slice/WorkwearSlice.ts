@@ -62,12 +62,14 @@ const workwearsSlice = createSlice({
     },
     removeWorkWear: (state, action) => {
       const id = action.payload;
-      return state.filter((worcwear)=> worcwear.id !== id)
+      return state.filter((foundItem)=> foundItem.id !== id)
     },
     workWearStatusFix: (state, action) => {
-      // const id = action.payload;
-      // const fixStatus = state.find((fixStatus)=> fixStatus.id ===id);
-      // state.fixStatus = !fixStatus?.fixStatus
+      const id = action.payload;
+       const foundItem = state.find((item) => item.id === id);
+        if (foundItem) {
+          foundItem.fixStatus = !foundItem.fixStatus;
+          }
     },
   },
 })
