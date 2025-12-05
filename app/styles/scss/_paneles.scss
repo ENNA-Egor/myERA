@@ -90,3 +90,13 @@ h2 {
     height: 60px;
     border: 1px solid $table-border-color;
  }
+ input[type="date"] {
+  border: 1px solid $table-border-color;
+  padding: 1px;
+  border-radius: 2px;
+  font-family: 'Times New Roman', Times, serif, sans-serif;
+  background-color: $background-momdal-panel-color;
+  color: $text-color;
+//   outline: none; /* Убираем стандартное свечение */
+//   box-shadow: 0 0 0 3px $background-panel-color;
+}

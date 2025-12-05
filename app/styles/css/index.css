@@ -214,6 +214,15 @@ h2 {
   border: 1px solid #e7e7e7;
 }
 
+input[type=date] {
+  border: 1px solid #e7e7e7;
+  padding: 1px;
+  border-radius: 2px;
+  font-family: "Times New Roman", Times, serif, sans-serif;
+  background-color: rgb(72, 79, 83);
+  color: aqua;
+}
+
 .persCardBlok {
   display: flex;
   flex-direction: row;

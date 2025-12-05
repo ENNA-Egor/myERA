@@ -15,6 +15,12 @@ export const ModalPanel =() => {
   const selectWorkswearAll = useSelector((state: RootState) => state.workswears);
   const selectedUser = selectUserAll.find(user => user.id === selectId);
   const dispatch = useDispatch();
+
+  const [selectedDate, setSelectedDate] = useState('');
+
+  const handleDateChange = (event) => {
+    setSelectedDate(event.target.value); // Обновляем состояние при изменении
+  };
  
  
   const handleClickModal =()=> {
@@ -94,6 +100,14 @@ export const ModalPanel =() => {
             <tbody>
                 <tr key={ selectedUser?.id}>
                   <td>{ selectedUser?.profession}</td>
+                   {selectedUser?.status ?<label htmlFor="date-input">Дата увольнения:</label>: <></>}
+                    {selectedUser?.status ? <input
+                      type="date" // Тип "date" открывает встроенный календарь браузера
+                      id="date-input"
+                      value={selectedDate}
+                      onChange={handleDateChange}
+                    /> : <></>}
+                    {/* {selectedDate && <p>Выбранная дата: {selectedDate}</p>} */}
                 </tr>
             </tbody>
           </table> 
