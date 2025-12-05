@@ -50,7 +50,7 @@ const workwearsSlice = createSlice({
         payload: {
           idUser: idSelectedUser,
           typeWorkswear: workswear.selectedTypeWorkswear,
-          date_issue: now,
+          date_issue: workswear.selectedDateIn? workswear.selectedDateIn: now,
           wearing_period: workswear.selectedWearingPeriods,
           prise: workswear.selectedPriceValue,
           residual_prise: 0,

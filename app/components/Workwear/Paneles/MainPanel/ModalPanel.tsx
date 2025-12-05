@@ -31,10 +31,10 @@ export const ModalPanel =() => {
         dispatch(toggleWorkswear( selectId))
   }
   
-  const handleClickWorkswearStatusFix =(el)=> {
-        dispatch(workWearStatusFix(el))
-          console.log (el)
-  }
+  // const handleClickWorkswearStatusFix =(el)=> {
+  //       dispatch(workWearStatusFix(el))
+  //         console.log (el)
+  // }
 
   const handleClickRemoveWorkswear =(el)=> {
         dispatch(removeWorkWear( el))
@@ -67,7 +67,7 @@ export const ModalPanel =() => {
       const millisecondsPerDay = 1000 * 60 * 60 * 24;
       const differenceInDays = Math.round(differenceInMilliseconds / millisecondsPerDay);
       const finprise = Math.round((prise * (period*365 -differenceInDays)/(period*365))/10)*10;
-      dispatch (workWearFinPrise({finprise, id}))
+      // dispatch (workWearFinPrise({finprise, id}))
     return finprise
   }
 
@@ -121,7 +121,7 @@ export const ModalPanel =() => {
                 <th>Остаток</th>
                 <th>Размер</th>
                 <th>Рост</th>
-                <th>Фиксировать</th>
+                {/* <th>Фиксировать</th> */}
               </tr>
             </thead>
             <tbody>
@@ -135,7 +135,7 @@ export const ModalPanel =() => {
                   <td>{selected.size}</td>
                   <td>{selected.height}</td>
                   <td> 
-                    <input type='checkbox' checked={selected.fixStatus} onChange={() => handleClickWorkswearStatusFix(selected.id)}></input>
+                    {/* <input type='checkbox' checked={selected.fixStatus} onChange={() => handleClickWorkswearStatusFix(selected.id)}></input> */}
                   </td>
                   <td className='img-viev' onClick={() => handleClickRemoveWorkswear(selected.id)}> 
                     {/* <button className='btn-delete'> */}

@@ -11,17 +11,26 @@ export const WorkwearAdd =() => {
     const reference = useSelector((state: RootState) => state.reference);
     const idSelectedUser = useSelector((state: RootState) => state.modal.idSelectedUser);
 
+    // const [selectedDateSiz, setSelectedDateSiz] = useState('');
+    
+    //   const handleDateChangeSiz = (event) => {
+    //     setSelectedDateSiz(event.target.value); // Обновляем состояние при изменении
+    //   };
+
     
     const [formData, setFormData] = useState({
         selectedSize: '',   // Соответствует name="selectedSizeId"
         selectedPriceValue: '', // Соответствует name="selectedPriceValue"
         selectedTypeWorkswear: '',   
         selectedWearingPeriods: '',   
-        selectedHeight: '',  
+        selectedHeight: '',
+        selectedDateIn: '',  
     });
 
     const handleChange = (event) => {
         const { name, value } = event.target; // Получаем имя поля и его новое значение
+        console.log (name);
+        console.log (value);
 
         setFormData(prevFormData => ({
             ...prevFormData,        // Копируем предыдущее состояние
@@ -38,6 +47,7 @@ export const WorkwearAdd =() => {
         selectedTypeWorkswear: '',   
         selectedWearingPeriods: '',   
         selectedHeight: '',  
+        selectedDateIn: '',  
         })
     }
     const addWorkswear =()=> {
@@ -143,6 +153,15 @@ export const WorkwearAdd =() => {
                         </option>
                     ))}
                 </select>
+             <h2>Выбор даты, если нужна не текущая</h2>
+                <input
+                      type="date" // Тип "date" открывает встроенный календарь браузера
+                      name="selectedDateIn" // Имя соответствует ключу в стейте formData
+                    //   value={formData.selectedDateIn}
+                      id="date-input-siz"
+                    //   value={selectedDateSiz}
+                      onChange={handleChange}
+                    />
             <button onClick={addWorkswear}>Submit</button>
             <button onClick={handleClickWorkswear}>Close</button>
         </form>
