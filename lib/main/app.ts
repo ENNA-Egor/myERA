@@ -5,6 +5,14 @@ import { registerResourcesProtocol } from './protocols'
 import { registerWindowHandlers } from '@/lib/conveyor/handlers/window-handler'
 import { registerAppHandlers } from '@/lib/conveyor/handlers/app-handler'
 
+import { installExtension, REDUX_DEVTOOLS, REACT_DEVELOPER_TOOLS } from 'electron-devtools-installer';
+
+app.whenReady().then(() => {
+    installExtension([REDUX_DEVTOOLS, REACT_DEVELOPER_TOOLS])
+        .then(([redux, react]) => console.log(`Added Extensions:  ${redux.name}, ${react.name}`))
+        .catch((err) => console.log('An error occurred: ', err));
+});
+
 export function createAppWindow(): void {
   // Register custom protocol for resources
   registerResourcesProtocol()
