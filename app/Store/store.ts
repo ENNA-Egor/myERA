@@ -11,7 +11,7 @@ export const store = configureStore({
      workswears: workswearReducer,
      reference: referenceReducer,
   },
-  // devTools: true,
+  devTools: true,
 })
 
 export type RootState = ReturnType<typeof store.getState>;

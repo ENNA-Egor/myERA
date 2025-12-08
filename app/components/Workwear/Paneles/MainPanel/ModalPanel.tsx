@@ -3,8 +3,8 @@ import React, {useState, useEffect} from 'react';
 import {RootState} from '../../../../Store/store';
 import { useDispatch, useSelector} from 'react-redux'
 import { toggleModal, toggleWorkswear } from '../../../../Store/Slice/ModalWindowSlice'
-import { statusUserChecked } from '../../../../Store/Slice/UserSlice'
-import {removeWorkWear, workWearStatusFix, workWearFinPrise} from '../../../../Store/Slice/WorkwearSlice'
+import { statusUserChecked, userDateOut } from '../../../../Store/Slice/UserSlice'
+import {removeWorkWear} from '../../../../Store/Slice/WorkwearSlice'
 import {DeleteIcon} from '../../Icons/icons'
 // import { ReactComponent as CustomIcon } from '../../../../assets/edit-button-svgrepo-com.svg'; 
 
@@ -20,6 +20,10 @@ export const ModalPanel =() => {
 
   const handleDateChange = (event) => {
     setSelectedDate(event.target.value); // Обновляем состояние при изменении
+    console.log(event.target.value)
+    console.log(selectedDate)
+    dispatch(userDateOut({selectId, selectedDate}));
+    // setSelectedDate('');
   };
  
  

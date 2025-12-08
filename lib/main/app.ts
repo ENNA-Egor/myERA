@@ -1,4 +1,5 @@
 import { BrowserWindow, shell, app } from 'electron'
+import { installExtension, REDUX_DEVTOOLS, REACT_DEVELOPER_TOOLS } from 'electron-devtools-installer';
 import { join } from 'path'
 import appIcon from '@/resources/build/icon.png?asset'
 import { registerResourcesProtocol } from './protocols'
@@ -34,6 +35,11 @@ export function createAppWindow(): void {
       sandbox: false,
     },
   })
+  app.whenReady().then(() => {
+    installExtension([REDUX_DEVTOOLS, REACT_DEVELOPER_TOOLS])
+        .then(([redux, react]) => console.log(`Added Extensions:  ${redux.name}, ${react.name}`))
+        .catch((err) => console.log('An error occurred: ', err));
+});
 
   // Register IPC events for the main window.
   registerWindowHandlers(mainWindow)
@@ -53,6 +59,7 @@ export function createAppWindow(): void {
   if (!app.isPackaged && process.env['ELECTRON_RENDERER_URL']) {
     mainWindow.loadURL(process.env['ELECTRON_RENDERER_URL'])
   } else {
-    mainWindow.loadFile(join(__dirname, '../renderer/index.html'))
+    mainWindow.loadFile(join(__dirname, '../renderer/index.html'));
+     mainWindow.webContents.openDevTools(); 
   }
 }

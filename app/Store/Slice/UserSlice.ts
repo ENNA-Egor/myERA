@@ -8,16 +8,17 @@ interface valueUser {
   patronymic: string;
   profession: string;
   status: boolean;
+  dateOut: Date;
 }
 
 const valueUser =  [
-    { id: 1, surname: 'Иванов', first_name: 'Владимир', patronymic: 'Петрович', profession:'Рабочий', status: false },
-    { id: 2, surname: 'Петров', first_name: 'Иван', patronymic: 'Сидорович' , profession:'Воджитель', status: false},
-    { id: 3, surname: 'Сидоров', first_name: 'Юрий', patronymic: 'Викторович' , profession:'Тракторист', status: true},
-    { id: 4, surname: 'Бобров', first_name: 'Семён', patronymic: 'Николаевич', profession:'Тракторист', status: false },
-    { id: 5, surname: 'Мишин', first_name: 'Василий', patronymic: 'Олегович' , profession:'Водитель', status: false},
-    { id: 6, surname: 'Володин', first_name: 'Сидор', patronymic: 'Ефимович' , profession:'Рабочий', status: false},
-    { id: 7, surname: 'Сидоров', first_name: 'Михаил', patronymic: 'Викторович' , profession:'Рабочий', status: true},
+    { id: 1, surname: 'Fert', first_name: 'Voljnd', patronymic: 'Dfrgy', profession:'arb'},
+    { id: 2, surname: 'Petr', first_name: 'Jhon', patronymic: 'Send' , profession:'Vod', status: false, dateOut:''},
+    { id: 3, surname: 'Singh', first_name: 'Evgen', patronymic: 'Virtor' , profession:'Tract', status: true, dateOut:''},
+    { id: 4, surname: 'Bobr', first_name: 'Dod', patronymic: 'Michail', profession:'Tract', status: false , dateOut:''},
+    { id: 5, surname: 'Bearn', first_name: 'Bob', patronymic: 'Oliver' , profession:'Vod', status: false, dateOut:''},
+    { id: 6, surname: 'Volod', first_name: 'Sem', patronymic: 'Victor' , profession:'arb', status: false, dateOut:''},
+    { id: 7, surname: 'Simson', first_name: 'Michael', patronymic: 'Victor' , profession:'arb', status: true, dateOut:''},
 ]
 
 const userSlice = createSlice({
@@ -49,10 +50,20 @@ const userSlice = createSlice({
       // @ts-ignore
       user.status = !user?.status;
     },
+    userDateOut: (state, action) => {
+      const id = action.payload;
+      const dateOut = action.payload;
+      const user = state.find((user) => user.id === id);
+      // @ts-ignore
+      // user.dateOut = dateOut;
+      console.log(id);
+      console.log(dateOut);
+      console.log(user);
+    },
   },
 })
 
 
-export const { addUser, removeUser, statusUserChecked} = userSlice.actions
+export const { addUser, removeUser, statusUserChecked, userDateOut} = userSlice.actions
 
 export default userSlice.reducer
