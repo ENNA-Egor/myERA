@@ -3,9 +3,9 @@ import React, {useState, useEffect} from 'react';
 import {RootState} from '../../../../Store/store';
 import { useDispatch, useSelector} from 'react-redux'
 import { toggleModal, toggleWorkswear } from '../../../../Store/Slice/ModalWindowSlice'
-import { statusUserChecked, userDateOut } from '../../../../Store/Slice/UserSlice'
+import { statusUserChecked, userDateOut, statusEditIvert } from '../../../../Store/Slice/UserSlice'
 import {removeWorkWear} from '../../../../Store/Slice/WorkwearSlice'
-import {DeleteIcon} from '../../Icons/icons'
+import {DeleteIcon, EditIcon} from '../../Icons/icons'
 // import { ReactComponent as CustomIcon } from '../../../../assets/edit-button-svgrepo-com.svg'; 
 
 
@@ -19,6 +19,7 @@ export const ModalPanel =() => {
   const handleDateChange = (event) => {
     const newDateOut = event.target.value
     dispatch(userDateOut({selectId, newDateOut}));
+     dispatch(statusEditIvert( selectId))
   };
  
  
@@ -30,14 +31,13 @@ export const ModalPanel =() => {
         dispatch(toggleWorkswear( selectId))
   }
   
-  // const handleClickWorkswearStatusFix =(el)=> {
-  //       dispatch(workWearStatusFix(el))
-  //         console.log (el)
-  // }
+
+ const buttonClisk = ()=> {
+    dispatch(statusEditIvert( selectId))
+    }
 
   const handleClickRemoveWorkswear =(el)=> {
-        dispatch(removeWorkWear( el))
-          console.log (el)
+        dispatch(removeWorkWear( el));
   }
 
 
@@ -72,7 +72,7 @@ export const ModalPanel =() => {
 
   const checkedHandle = () =>{
       alert ('Вы действительно хотите изменить статус работника?')
-      dispatch (statusUserChecked(selectedUser?.id))
+      dispatch (statusUserChecked(selectedUser?.id));
   }
 
 
@@ -111,9 +111,16 @@ export const ModalPanel =() => {
                     {selectedUser?.status ? <input
                       type="date" // Тип "date" открывает встроенный календарь браузера
                       id="date-input"
+                      disabled={!!selectedUser?.editStatus}
                       value={selectedUser?.dateOut}
                       onChange={handleDateChange}
                     /> : <></>}
+                    <button
+                        className="allBtn btnMenu editMenu editBtn"
+                          onClick={() => buttonClisk()}
+                                        >
+                        <EditIcon size={25} fill={'aqua'}/>
+                    </button>
                   </td>
                 </tr>
             </tbody>

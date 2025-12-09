@@ -109,6 +109,10 @@ a:not([class]) {
   height: 30px;
 }
 
+.editBtn {
+  background-color: rgb(72, 79, 83);
+}
+
 .allBtn, .img-viev {
   padding: 2px;
   margin: 5px;

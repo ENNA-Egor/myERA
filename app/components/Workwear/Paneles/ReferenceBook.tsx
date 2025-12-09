@@ -19,9 +19,8 @@ export const ReferenceBook =() => {
                       className="allBtn btnMenu editMenu"
                       onClick={() => buttonClisk()}
                     >
-                 {/* <img src={myImage}  className="imgButton allBtn"/> */}
-            <EditIcon size={25} fill={'aqua'}/>
-                    </button>
+                <EditIcon size={25} fill={'aqua'}/>
+            </button>
         </div>
     )
 }
