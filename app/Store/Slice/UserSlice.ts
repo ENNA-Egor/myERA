@@ -14,11 +14,11 @@ interface valueUser {
 const valueUser =  [
     { id: 1, surname: 'Fert', first_name: 'Voljnd', patronymic: 'Dfrgy', profession:'arb', status: false, dateOut:'',editStatus: false},
     { id: 2, surname: 'Petr', first_name: 'Jhon', patronymic: 'Send' , profession:'Vod', status: false, dateOut:'',editStatus: false},
-    { id: 3, surname: 'Singh', first_name: 'Evgen', patronymic: 'Virtor' , profession:'Tract', status: true, dateOut:'',editStatus: false},
+    { id: 3, surname: 'Singh', first_name: 'Evgen', patronymic: 'Virtor' , profession:'Tract', status: true, dateOut:'2025-12-25',editStatus: true},
     { id: 4, surname: 'Bobr', first_name: 'Dod', patronymic: 'Michail', profession:'Tract', status: false , dateOut:'',editStatus: false},
     { id: 5, surname: 'Bearn', first_name: 'Bob', patronymic: 'Oliver' , profession:'Vod', status: false, dateOut:'',editStatus: false},
     { id: 6, surname: 'Volod', first_name: 'Sem', patronymic: 'Victor' , profession:'arb', status: false, dateOut:'',editStatus: false},
-    { id: 7, surname: 'Simson', first_name: 'Michael', patronymic: 'Victor' , profession:'arb', status: true, dateOut:'',editStatus: false},
+    { id: 7, surname: 'Simson', first_name: 'Michael', patronymic: 'Victor' , profession:'arb', status: true, dateOut:'2025-12-09',editStatus: true},
 ]
 
 const userSlice = createSlice({
