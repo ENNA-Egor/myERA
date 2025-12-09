@@ -37,6 +37,9 @@ export const ModalPanel =() => {
     }
 
   const handleClickRemoveWorkswear =(el)=> {
+       if (!!selectedUser?.editStatus) {
+      return;
+    }
         dispatch(removeWorkWear( el));
   }
 
@@ -58,7 +61,7 @@ export const ModalPanel =() => {
 
   const [residualSumm, setResidualSumm] = useState(0);
   
-  const residual_p =(prise, period, start_date, id?: string) => {
+  const residual_p =(prise, period, start_date/*, id?: string*/ ) => {
     // const endDate = new Date();
     const endDate = selectedUser?.dateOut ? new Date(selectedUser?.dateOut) :new Date();
     //  const endDate = new Date(new Date().toDateString());
@@ -145,13 +148,13 @@ export const ModalPanel =() => {
                   <td> { selected.date_issue} </td>
                   <td>{ selected.wearing_period}</td>
                   <td>{ selected.prise}</td>
-                  <td>{residual_p(selected.prise, selected.wearing_period, selected.date_issue, selected.id)}</td>
+                  <td>{residual_p(selected.prise, selected.wearing_period, selected.date_issue/*, selected.id*/)}</td>
                   <td>{selected.size}</td>
                   <td>{selected.height}</td>
                   <td> 
                     {/* <input type='checkbox' checked={selected.fixStatus} onChange={() => handleClickWorkswearStatusFix(selected.id)}></input> */}
                   </td>
-                  <td className='img-viev' onClick={() => handleClickRemoveWorkswear(selected.id)}> 
+                  <td className='img-viev' onClick={() => handleClickRemoveWorkswear(selected.id)} > 
                     {/* <button className='btn-delete'> */}
                       <DeleteIcon size={48} fill= 'rgb(72, 79, 83)'/>
                     {/* </button> */}
