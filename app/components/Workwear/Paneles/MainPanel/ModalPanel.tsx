@@ -16,14 +16,9 @@ export const ModalPanel =() => {
   const selectedUser = selectUserAll.find(user => user.id === selectId);
   const dispatch = useDispatch();
 
-  const [selectedDate, setSelectedDate] = useState('');
-
   const handleDateChange = (event) => {
-    setSelectedDate(event.target.value); // Обновляем состояние при изменении
-    console.log(event.target.value)
-    console.log(selectedDate)
-    dispatch(userDateOut({selectId, selectedDate}));
-    // setSelectedDate('');
+    const newDateOut = event.target.value
+    dispatch(userDateOut({selectId, newDateOut}));
   };
  
  
@@ -64,7 +59,8 @@ export const ModalPanel =() => {
   const [residualSumm, setResidualSumm] = useState(0);
   
   const residual_p =(prise, period, start_date, id?: string) => {
-    const endDate = new Date();
+    // const endDate = new Date();
+    const endDate = selectedUser?.dateOut ? new Date(selectedUser?.dateOut) :new Date();
     //  const endDate = new Date(new Date().toDateString());
       const startDate = new Date(start_date);;
       const differenceInMilliseconds = endDate.getTime() - startDate.getTime();
@@ -104,14 +100,17 @@ export const ModalPanel =() => {
             <tbody>
                 <tr key={ selectedUser?.id}>
                   <td>{ selectedUser?.profession}</td>
-                   {selectedUser?.status ?<label htmlFor="date-input">Дата увольнения:</label>: <></>}
+                  <td>
+                     {selectedUser?.status ?<label htmlFor="date-input">Дата увольнения:</label>: <></>}
+                  </td>
+                  <td>
                     {selectedUser?.status ? <input
                       type="date" // Тип "date" открывает встроенный календарь браузера
                       id="date-input"
-                      value={selectedDate}
+                      value={selectedUser?.dateOut}
                       onChange={handleDateChange}
                     /> : <></>}
-                    {/* {selectedDate && <p>Выбранная дата: {selectedDate}</p>} */}
+                  </td>
                 </tr>
             </tbody>
           </table> 

@@ -12,7 +12,7 @@ interface valueUser {
 }
 
 const valueUser =  [
-    { id: 1, surname: 'Fert', first_name: 'Voljnd', patronymic: 'Dfrgy', profession:'arb'},
+    { id: 1, surname: 'Fert', first_name: 'Voljnd', patronymic: 'Dfrgy', profession:'arb', dateOut:''},
     { id: 2, surname: 'Petr', first_name: 'Jhon', patronymic: 'Send' , profession:'Vod', status: false, dateOut:''},
     { id: 3, surname: 'Singh', first_name: 'Evgen', patronymic: 'Virtor' , profession:'Tract', status: true, dateOut:''},
     { id: 4, surname: 'Bobr', first_name: 'Dod', patronymic: 'Michail', profession:'Tract', status: false , dateOut:''},
@@ -51,14 +51,14 @@ const userSlice = createSlice({
       user.status = !user?.status;
     },
     userDateOut: (state, action) => {
-      const id = action.payload;
-      const dateOut = action.payload;
+      const dateOut = action.payload.newDateOut;
+      const id = action.payload.selectId;
       const user = state.find((user) => user.id === id);
       // @ts-ignore
-      // user.dateOut = dateOut;
+      user.dateOut = dateOut;
+      console.log(user?.dateOut);
       console.log(id);
-      console.log(dateOut);
-      console.log(user);
+      // console.log(user);
     },
   },
 })
