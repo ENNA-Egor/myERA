@@ -67,11 +67,11 @@ export const ModalPanel =() => {
       const millisecondsPerDay = 1000 * 60 * 60 * 24;
       const differenceInDays = Math.round(differenceInMilliseconds / millisecondsPerDay);
       const finprise = Math.round((prise * (period*365 -differenceInDays)/(period*365))/10)*10;
-      // dispatch (workWearFinPrise({finprise, id}))
-    return finprise
+    return finprise > 0 ? finprise : 0
   }
 
   const checkedHandle = () =>{
+      alert ('Вы действительно хотите изменить статус работника?')
       dispatch (statusUserChecked(selectedUser?.id))
   }
 
@@ -85,7 +85,11 @@ export const ModalPanel =() => {
           <h2>{selectedUser?.first_name }</h2>
           <h2>{selectedUser?.patronymic }</h2>
           <label className='labelStyle'>{!selectedUser?.status ? 'Работает' : 'Уволен'}</label>
-           <input type='checkbox' className='checkStyle' checked={selectedUser?.status || false} onChange={checkedHandle}></input>
+           <input type='checkbox' 
+            className='checkStyle' 
+             disabled={!!selectedUser?.dateOut} 
+            checked={selectedUser?.status || false} 
+            onChange={checkedHandle}></input>
         </div>
           <table className="user-table">
             <thead>

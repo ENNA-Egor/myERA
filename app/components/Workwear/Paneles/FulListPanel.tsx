@@ -5,7 +5,7 @@ import React, { useState, useEffect} from 'react';
 import { useDispatch, useSelector} from 'react-redux'
 import { toggleModal } from '../../../Store/Slice/ModalWindowSlice'
 import {RootState} from '../../../Store/store'
-import { statusUserChecked } from '../../../Store/Slice/UserSlice'
+// import { statusUserChecked } from '../../../Store/Slice/UserSlice'
 
 import {TopMenu} from './Menu/TopMenu'
 
@@ -38,7 +38,8 @@ export const FulListPanel = () => {
     // }
  
      const checkedHandle = (userId) => {
-    dispatch(statusUserChecked(userId));
+      alert ('Изменить статус работника можно только в личной карточке')
+    // dispatch(statusUserChecked(userId));
   };
   
 
@@ -72,7 +73,10 @@ export const FulListPanel = () => {
                 <td>{user.first_name}</td>
                 <td>{user.patronymic}</td>
                 <td>{user.status ? 'Уволен' : 'Работает'}
-                  <input type='checkbox' className='checkStyle' checked={user.status || false} onChange={() => checkedHandle(user.id)}></input>
+                  <input type='checkbox' 
+                  className='checkStyle' 
+                  checked={user.status || false} 
+                  onChange={() => checkedHandle(user.id)}></input>
                 </td>
               </tr>
             ))}
