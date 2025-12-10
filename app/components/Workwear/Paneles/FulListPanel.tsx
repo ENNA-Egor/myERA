@@ -30,14 +30,15 @@ export const FulListPanel = () => {
     }, [initialUsers, userStatusChect]);
  
   // Состояние для хранения полного списка пользователей
-  const [users, setUsers] = useState(realUsers);
-  const [status, setStatus] = useState(userStatusChect);
+  const [, setUsers] = useState(realUsers);
+
+  const [, setStatus] = useState(userStatusChect);
 
     // const checkedHandle = () =>{
     //     dispatch (statusUserChecked(user.id))
     // }
  
-     const checkedHandle = (userId) => {
+     const checkedHandle = () => {
       alert ('Изменить статус работника можно только в личной карточке')
     // dispatch(statusUserChecked(userId));
   };
@@ -76,7 +77,7 @@ export const FulListPanel = () => {
                   <input type='checkbox' 
                   className='checkStyle' 
                   checked={user.status || false} 
-                  onChange={() => checkedHandle(user.id)}></input>
+                  onChange={() => checkedHandle()}></input>
                 </td>
               </tr>
             ))}
