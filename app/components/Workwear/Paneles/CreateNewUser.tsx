@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import {RootState} from '../../../Store/store'
 import { addUser } from "../../../Store/Slice/UserSlice";
 
-export const PersonalCard = () => {
+export const CreateNewUser = () => {
 
   const allUsers = useSelector((state:RootState)=> state.users)
 

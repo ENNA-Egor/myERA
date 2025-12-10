@@ -1,9 +1,9 @@
 import React from "react"
 
 import {MainPanel} from '../Paneles/MainPanel/MainPanel'
-import {ModalPanel} from '../Paneles/MainPanel/PersonalCard'
+import {PersonalCard} from '../Paneles/MainPanel/PersonalCard'
 import {FulListPanel} from '../Paneles/FulListPanel'
-import {PersonalCard} from '../Paneles/CreateNewUser'
+import {CreateNewUser} from '../Paneles/CreateNewUser'
 import {Leftovers} from '../Paneles/Leftovers'
 import {Coming} from '../Paneles/Coming'
 import {WorkwearAdd} from '../Paneles/MainPanel/WorkwearAdd'
@@ -55,13 +55,13 @@ export const BodyContent = () =>{
                         <MainPanel/>          
                     </div>
                     <div id="modalMain" className={modalClasses}>
-                        <ModalPanel/>
+                        <PersonalCard/>
                     </div>
                     <div id="workwearMain" className={workwearClasses}>
                         <WorkwearAdd/>
                     </div>
                     <div id= "3" className="panels">
-                        <PersonalCard/>
+                        <CreateNewUser/>
                     </div>
                     <div id= "4" className="panels">
                         <Leftovers/>

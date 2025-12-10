@@ -9,7 +9,7 @@ import {DeleteIcon, EditIcon} from '../../Icons/icons'
 // import { ReactComponent as CustomIcon } from '../../../../assets/edit-button-svgrepo-com.svg'; 
 
 
-export const ModalPanel =() => {
+export const PersonalCard =() => {
   const selectId = useSelector((state: RootState) => state.modal.visibleID);
   const selectUserAll = useSelector((state: RootState) => state.users);
   const selectWorkswearAll = useSelector((state: RootState) => state.workswears);
