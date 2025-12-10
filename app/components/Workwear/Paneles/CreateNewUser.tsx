@@ -1,5 +1,5 @@
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {RootState} from '../../../Store/store'
 import { addUser } from "../../../Store/Slice/UserSlice";
@@ -17,13 +17,37 @@ export const PersonalCard = () => {
   };
 
 
+  const surnameRef = useRef<HTMLInputElement>(null);
+  const first_nameRef = useRef<HTMLInputElement>(null);
+  const patronymicRef = useRef<HTMLInputElement>(null);
+  const professionRef = useRef<HTMLInputElement>(null);
+
+  const handleKeyDown = (e, nextInputRef) => {
+    if (e.key === 'Enter') {
+      e.preventDefault();
+      if (nextInputRef && nextInputRef.current) {
+        nextInputRef.current.focus();
+      }
+    }
+  };
+
+
   const [newUser, setNewUser] = useState(initialNewUsers);
   const [users, setUsers] = useState(allUsers);
   const [searchTerm, setSearchTerm] = useState('');
 
    useEffect(() => {  
       setUsers(allUsers); 
+      //       if (surnameRef.current) {
+      //   surnameRef.current.focus;
+      // }
    }, [allUsers])
+
+  //  useEffect(() => {
+  //   if (surnameRef.current) {
+  //     surnameRef.current.focus;
+  //   }
+  // }, []); 
 
 
   const filteredUsers = searchTerm
@@ -77,7 +101,10 @@ export const PersonalCard = () => {
         <label className="persCardData">
           Фамилия
           <input
+            ref={surnameRef}
+            onKeyDown={(e) => handleKeyDown(e, first_nameRef)}
             type="text"
+            // autoFocus
             className="inputCard"
             name="surname"
             value={newUser.surname}
@@ -90,6 +117,8 @@ export const PersonalCard = () => {
         <label className="persCardData">
           Имя
           <input
+            ref={first_nameRef}
+            onKeyDown={(e) => handleKeyDown(e, patronymicRef)}
             type="text"
             className="inputCard"
             name="first_name"
@@ -103,6 +132,8 @@ export const PersonalCard = () => {
         <label className="persCardData">
           Отчество
           <input
+            ref={patronymicRef}
+            onKeyDown={(e) => handleKeyDown(e, professionRef)}
             type="text"
             className="inputCard"
             name="patronymic"
@@ -116,6 +147,8 @@ export const PersonalCard = () => {
         <label className="persCardData">
           Профессия
           <input
+            ref={professionRef}
+            onKeyDown={(e) => handleKeyDown(e, null)}
             type="text"
             className="inputCard"
             name="profession"
@@ -162,9 +195,10 @@ export const PersonalCard = () => {
         ) : (
           <p className="no-results">Совпадений не найдено.</p>
         )
-      ) : (
-        <p className="no-results">Введите запрос для поиска.</p>
-      )}
+        ) : (
+          <></>
+        )
+      }
     </div>
 
       <button

@@ -1,9 +1,9 @@
 import React from "react"
 
 import {MainPanel} from '../Paneles/MainPanel/MainPanel'
-import {ModalPanel} from '../Paneles/MainPanel/ModalPanel'
+import {ModalPanel} from '../Paneles/MainPanel/PersonalCard'
 import {FulListPanel} from '../Paneles/FulListPanel'
-import {PersonalCard} from '../Paneles/PersonalCard'
+import {PersonalCard} from '../Paneles/CreateNewUser'
 import {Leftovers} from '../Paneles/Leftovers'
 import {Coming} from '../Paneles/Coming'
 import {WorkwearAdd} from '../Paneles/MainPanel/WorkwearAdd'
