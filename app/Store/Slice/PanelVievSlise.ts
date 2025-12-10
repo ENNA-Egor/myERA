@@ -2,7 +2,7 @@ import { createSlice} from '@reduxjs/toolkit'
 
 
 interface statusTabs {
-    Id: null;
+    id: number;
     statusTab: boolean;
 }
 
@@ -21,9 +21,8 @@ const panelVievSlise = createSlice({
     initialState: statusTabs,
     reducers : {
         selectStatusViev: (state, action) => {
-    
     },
-    }
+    },
 })
 
 

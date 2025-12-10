@@ -19,7 +19,9 @@ export const BodyContent = () =>{
      const isModalOpen = useSelector((state: RootState) => state.modal.isVisible);
       const modalClasses = `modalMain ${isModalOpen ? 'modalMainActive' : ''}`;
      const workwearOpen = useSelector((state: RootState) => state.modal.workwearVisible);
-      const workwearClasses = `workwearMain ${workwearOpen ? 'workwearMainActive' : ''}`;
+     const workwearClasses = `workwearMain ${workwearOpen ? 'workwearMainActive' : ''}`;
+     const panelViev = useSelector((state: RootState) => state.tabsViev);
+     console.log(panelViev)
     
     const selectBtn =(e)=> {
         const tab_elements = document.querySelectorAll('.btnMenu');
