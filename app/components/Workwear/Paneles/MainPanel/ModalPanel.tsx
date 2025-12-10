@@ -154,9 +154,9 @@ export const ModalPanel =() => {
                   <td> 
                     {/* <input type='checkbox' checked={selected.fixStatus} onChange={() => handleClickWorkswearStatusFix(selected.id)}></input> */}
                   </td>
-                  <td className='img-viev' onClick={() => handleClickRemoveWorkswear(selected.id)} > 
+                  <td className={!selectedUser?.status ? 'img-viev' : 'img-disabled'}  onClick={() => handleClickRemoveWorkswear(selected.id)} > 
                     {/* <button className='btn-delete'> */}
-                      <DeleteIcon size={48} fill= 'rgb(72, 79, 83)'/>
+                      <DeleteIcon size={!selectedUser?.status ? 48 : 0.1} fill= 'rgb(72, 79, 83)'/>
                     {/* </button> */}
                     {/* <RemoveIcon size={38} fill= 'rgb(44, 44, 44)'/> */}
                   </td>

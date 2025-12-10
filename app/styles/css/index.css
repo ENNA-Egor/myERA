@@ -113,7 +113,7 @@ a:not([class]) {
   background-color: rgb(72, 79, 83);
 }
 
-.allBtn, .img-viev {
+.allBtn, .img-viev, .img-disabled {
   padding: 2px;
   margin: 5px;
   font-size: 15px;
@@ -121,13 +121,17 @@ a:not([class]) {
   border-radius: 5px;
 }
 
-.img-viev {
+.img-viev, .img-disabled {
   display: flex;
   justify-content: end;
   align-items: start;
   width: 40px;
   height: 40px;
   background-color: rgb(72, 79, 83);
+}
+
+.img-disabled {
+  cursor: default;
 }
 
 .panelesMeny {

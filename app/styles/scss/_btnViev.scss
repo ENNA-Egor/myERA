@@ -16,11 +16,7 @@
     background-color: $background-momdal-panel-color;
 }
 
-// .img-viev {
-//     flex-;
-// }
-
-.img-viev  > svg {
-//   padding: 2px;
-
+.img-disabled {
+    @extend .img-viev;
+    cursor: default;
 }
