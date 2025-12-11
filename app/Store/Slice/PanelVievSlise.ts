@@ -4,14 +4,16 @@ import { createSlice} from '@reduxjs/toolkit'
 interface statusTabs {
     id: number;
     statusTab: boolean;
+    nane: string;
 }
 
 const statusTabs = [
-    {id: 1, statusTab: false},
-    {id: 2, statusTab: true},
-    {id: 3, statusTab: false},
-    {id: 4, statusTab: false},
-    {id: 5, statusTab: false},
+    {id: 1, statusTab: true, name: 'Полный список'},
+    {id: 2, statusTab: false, name: 'Поиск'},
+    {id: 3, statusTab: false, name: 'Новая карточка'},
+    {id: 4, statusTab: false, name: 'Остатки'},
+    {id: 5, statusTab: false, name: 'Приход'},
+    {id: 6, statusTab: false, name: 'Справочники'},
 ]
 
 
@@ -21,6 +23,11 @@ const panelVievSlise = createSlice({
     initialState: statusTabs,
     reducers : {
         selectStatusViev: (state, action) => {
+            const id = action.payload;
+            console.log (id)
+            //  const status = state.find((status) => status.id === id);
+            //     // @ts-ignore
+            // status.statusTab = !status?.statusTab;
     },
     },
 })

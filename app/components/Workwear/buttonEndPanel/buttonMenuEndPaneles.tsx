@@ -8,8 +8,10 @@ import {Leftovers} from '../Paneles/Leftovers'
 import {Coming} from '../Paneles/Coming'
 import {WorkwearAdd} from '../Paneles/MainPanel/WorkwearAdd'
 import {ReferenceBook} from '../Paneles/ReferenceBook'
+import {selectStatusViev} from '../../../Store/Slice/PanelVievSlise'
 import {RootState} from '../../../Store/store'
-import { useSelector } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
+
 // import { toggleModal } from '../../../../Store/Slice/ModalWindowSlice'
 
 
@@ -21,9 +23,12 @@ export const BodyContent = () =>{
      const workwearOpen = useSelector((state: RootState) => state.modal.workwearVisible);
      const workwearClasses = `workwearMain ${workwearOpen ? 'workwearMainActive' : ''}`;
      const panelViev = useSelector((state: RootState) => state.tabsViev);
-     console.log(panelViev)
+    //  console.log(panelViev)
+
+    // const dispatch = useDispatch();
     
     const selectBtn =(e)=> {
+        // dispatch(selectStatusViev( e.target.id))
         const tab_elements = document.querySelectorAll('.btnMenu');
         const contents = document.querySelectorAll('.panels');
 
@@ -40,20 +45,24 @@ export const BodyContent = () =>{
         <div className="body">
             <div className="levtMenu">
                 <div className="mainMenyBtn">
-                    <button id= "2" onClick={selectBtn} className={"btnMenu allBtn active"}> Полный список </button>
-                    <button id= "1" onClick={selectBtn} className="btnMenu allBtn"> Поиск </button>
-                    <button id= "3" onClick={selectBtn}  className="btnMenu allBtn"> Новая карточка </button>
-                    <button id= "4" onClick={selectBtn} className="btnMenu allBtn"> Остатки </button>
-                    <button id= "5" onClick={selectBtn} className="btnMenu allBtn"> Приход </button>
-                    <button id= "6" onClick={selectBtn} className="btnMenu allBtn"> Справочники </button>
+                    {/* {panelViev.map((item)=> (
+                        // @ts-ignore
+                        <button key= {item.id} id= {item.id} onClick={selectBtn} className={item.statusTab? "btnMenu allBtn active": 'btnMenu allBtn'}>{item.name} </button>
+                    ))} */}
+                     <button id= "1" onClick={selectBtn} className={"btnMenu allBtn active"}> Полный список </button>
+                     <button id= "2" onClick={selectBtn} className="btnMenu allBtn"> Поиск </button>
+                     <button id= "3" onClick={selectBtn}  className="btnMenu allBtn"> Новая карточка </button>
+                     <button id= "4" onClick={selectBtn} className="btnMenu allBtn"> Остатки </button>
+                     <button id= "5" onClick={selectBtn} className="btnMenu allBtn"> Приход </button>
+                     <button id= "6" onClick={selectBtn} className="btnMenu allBtn"> Справочники </button>
                 </div>
             </div>
             <div className="mainWindow">
                 <div className="panelesMeny">
-                    <div id= "2" className="panels activePanel">
+                    <div id= "1" className="panels activePanel">
                         <FulListPanel/>
                     </div>
-                    <div id= "1" className=" panels "> 
+                    <div id= "2" className=" panels "> 
                         <MainPanel/>          
                     </div>
                     <div id="modalMain" className={modalClasses}>
