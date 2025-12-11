@@ -13,13 +13,13 @@
     height: 89vh;
     color: $text-color-white;
     background-color:$background-panel-color;
-    display: none;
+    // display: none;
 }
- .activePanel {
-   background-color: $background-panel-color;
-   color: $text-color;
-   display: block;
-}
+//  .activePanel {
+//    background-color: $background-panel-color;
+//    color: $text-color;
+//    display: block;
+// }
 
 .modalMain{
     width: 90%;

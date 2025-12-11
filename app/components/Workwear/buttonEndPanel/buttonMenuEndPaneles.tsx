@@ -1,4 +1,4 @@
-// import React from "react"
+import React, {useState} from "react"
 
 import {MainPanel} from '../Paneles/MainPanel/MainPanel'
 import {PersonalCard} from '../Paneles/MainPanel/PersonalCard'
@@ -12,8 +12,6 @@ import {selectStatusViev} from '../../../Store/Slice/PanelVievSlise'
 import {RootState} from '../../../Store/store'
 import { useSelector, useDispatch } from 'react-redux'
 
-// import { toggleModal } from '../../../../Store/Slice/ModalWindowSlice'
-
 
 
 export const BodyContent = () =>{
@@ -25,19 +23,25 @@ export const BodyContent = () =>{
      const panelViev = useSelector((state: RootState) => state.tabsViev);
     //  console.log(panelViev)
 
+    const [aktivePanel, setAktivePanel] = useState('1')
+
+    
+    const panelsObj = {
+        '1' :FulListPanel,
+        '2' :MainPanel,
+        '3' :CreateNewUser,
+        '4' :Leftovers,
+        '5' :Coming,
+        '6' :ReferenceBook,
+    }
+    
+    const ActiveComponent = panelsObj[aktivePanel];
+
     const dispatch = useDispatch();
     
-    const selectBtn =(e)=> {
+    const selectBtn =(e,)=> {
         dispatch(selectStatusViev( e.target.id))
-        // const tab_elements = document.querySelectorAll('.btnMenu');
-        const contents = document.querySelectorAll('.panels');
-
-        // tab_elements.forEach((element)=> {
-        //     e.target.id === element.id ? (element.classList.add("active")) : (element.classList.remove("active"))
-        // })  
-        contents.forEach((content_element)=> {
-            e.target.id === content_element.id ? (content_element.classList.add("activePanel")) : (content_element.classList.remove("activePanel"))
-        })  
+        setAktivePanel( e.target.id)
     }
 
 
@@ -49,39 +53,18 @@ export const BodyContent = () =>{
                         // @ts-ignore
                         <button key= {item.id} id= {item.id} onClick={selectBtn} className={item.statusTab? "btnMenu allBtn active": 'btnMenu allBtn'}>{item.name} </button>
                     ))}
-                     {/* <button id= "1" onClick={selectBtn} className={"btnMenu allBtn active"}> Полный список </button>
-                     <button id= "2" onClick={selectBtn} className="btnMenu allBtn"> Поиск </button>
-                     <button id= "3" onClick={selectBtn}  className="btnMenu allBtn"> Новая карточка </button>
-                     <button id= "4" onClick={selectBtn} className="btnMenu allBtn"> Остатки </button>
-                     <button id= "5" onClick={selectBtn} className="btnMenu allBtn"> Приход </button>
-                     <button id= "6" onClick={selectBtn} className="btnMenu allBtn"> Справочники </button> */}
                 </div>
             </div>
             <div className="mainWindow">
                 <div className="panelesMeny">
-                    <div id= "1" className="panels activePanel">
-                        <FulListPanel/>
-                    </div>
-                    <div id= "2" className=" panels "> 
-                        <MainPanel/>          
+                <div id= {aktivePanel} className="panels">
+                        <ActiveComponent />
                     </div>
                     <div id="modalMain" className={modalClasses}>
                         <PersonalCard/>
                     </div>
                     <div id="workwearMain" className={workwearClasses}>
                         <WorkwearAdd/>
-                    </div>
-                    <div id= "3" className="panels">
-                        <CreateNewUser/>
-                    </div>
-                    <div id= "4" className="panels">
-                        <Leftovers/>
-                    </div>
-                    <div id= "5" className="panels">
-                        <Coming/>
-                    </div>
-                    <div id= "6" className="panels">
-                        <ReferenceBook/>
                     </div>
                 </div>
             </div>

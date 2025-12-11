@@ -145,13 +145,6 @@ a:not([class]) {
   height: 89vh;
   color: antiquewhite;
   background-color: rgb(44, 44, 44);
-  display: none;
-}
-
-.activePanel {
-  background-color: rgb(44, 44, 44);
-  color: aqua;
-  display: block;
 }
 
 .modalMain, .workwearMain {
