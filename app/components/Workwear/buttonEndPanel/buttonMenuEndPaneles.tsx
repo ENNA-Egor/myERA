@@ -29,12 +29,12 @@ export const BodyContent = () =>{
     
     const selectBtn =(e)=> {
         dispatch(selectStatusViev( e.target.id))
-        const tab_elements = document.querySelectorAll('.btnMenu');
+        // const tab_elements = document.querySelectorAll('.btnMenu');
         const contents = document.querySelectorAll('.panels');
 
-        tab_elements.forEach((element)=> {
-            e.target.id === element.id ? (element.classList.add("active")) : (element.classList.remove("active"))
-        })  
+        // tab_elements.forEach((element)=> {
+        //     e.target.id === element.id ? (element.classList.add("active")) : (element.classList.remove("active"))
+        // })  
         contents.forEach((content_element)=> {
             e.target.id === content_element.id ? (content_element.classList.add("activePanel")) : (content_element.classList.remove("activePanel"))
         })  
@@ -45,16 +45,16 @@ export const BodyContent = () =>{
         <div className="body">
             <div className="levtMenu">
                 <div className="mainMenyBtn">
-                    {/* {panelViev.map((item)=> (
+                    {panelViev.map((item)=> (
                         // @ts-ignore
                         <button key= {item.id} id= {item.id} onClick={selectBtn} className={item.statusTab? "btnMenu allBtn active": 'btnMenu allBtn'}>{item.name} </button>
-                    ))} */}
-                     <button id= "1" onClick={selectBtn} className={"btnMenu allBtn active"}> Полный список </button>
+                    ))}
+                     {/* <button id= "1" onClick={selectBtn} className={"btnMenu allBtn active"}> Полный список </button>
                      <button id= "2" onClick={selectBtn} className="btnMenu allBtn"> Поиск </button>
                      <button id= "3" onClick={selectBtn}  className="btnMenu allBtn"> Новая карточка </button>
                      <button id= "4" onClick={selectBtn} className="btnMenu allBtn"> Остатки </button>
                      <button id= "5" onClick={selectBtn} className="btnMenu allBtn"> Приход </button>
-                     <button id= "6" onClick={selectBtn} className="btnMenu allBtn"> Справочники </button>
+                     <button id= "6" onClick={selectBtn} className="btnMenu allBtn"> Справочники </button> */}
                 </div>
             </div>
             <div className="mainWindow">

@@ -23,13 +23,10 @@ const panelVievSlise = createSlice({
     initialState: statusTabs,
     reducers : {
         selectStatusViev: (state, action) => {
-            const id = action.payload;
-            console.log (id)
-            state.map((item) => {item.id === id? item.statusTab =true : item.statusTab =false})
-            //  const status = state.find((status) => status.id === id);
-            //     // @ts-ignore
-            // status.statusTab = !status?.statusTab;
-            console.log (state[1].statusTab)
+            const id = +action.payload;
+            state.forEach((item) => {
+                item.statusTab = (item.id === id);
+            });
         },
     },
 })
