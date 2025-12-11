@@ -1,4 +1,4 @@
-import React from "react"
+// import React from "react"
 
 import {MainPanel} from '../Paneles/MainPanel/MainPanel'
 import {PersonalCard} from '../Paneles/MainPanel/PersonalCard'
