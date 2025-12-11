@@ -25,10 +25,10 @@ export const BodyContent = () =>{
      const panelViev = useSelector((state: RootState) => state.tabsViev);
     //  console.log(panelViev)
 
-    // const dispatch = useDispatch();
+    const dispatch = useDispatch();
     
     const selectBtn =(e)=> {
-        // dispatch(selectStatusViev( e.target.id))
+        dispatch(selectStatusViev( e.target.id))
         const tab_elements = document.querySelectorAll('.btnMenu');
         const contents = document.querySelectorAll('.panels');
 
