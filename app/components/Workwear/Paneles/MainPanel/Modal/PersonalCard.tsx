@@ -1,11 +1,11 @@
 // src/components/ButtonCls.tsx
 import React, {useState, useEffect} from 'react';
-import {RootState} from '../../../../Store/store';
+import {RootState} from '../../../../../Store/store';
 import { useDispatch, useSelector} from 'react-redux'
-import { toggleModal, toggleWorkswear } from '../../../../Store/Slice/ModalWindowSlice'
-import { statusUserChecked, userDateOut, statusEditIvert } from '../../../../Store/Slice/UserSlice'
-import {removeWorkWear} from '../../../../Store/Slice/WorkwearSlice'
-import {DeleteIcon, EditIcon} from '../../Icons/icons'
+import { toggleModal, toggleWorkswear } from '../../../../../Store/Slice/ModalWindowSlice'
+import { statusUserChecked, userDateOut, statusEditIvert } from '../../../../../Store/Slice/UserSlice'
+import {removeWorkWear} from '../../../../../Store/Slice/WorkwearSlice'
+import {DeleteIcon, EditIcon} from '../../../Icons/icons'
 // import { ReactComponent as CustomIcon } from '../../../../assets/edit-button-svgrepo-com.svg'; 
 
 

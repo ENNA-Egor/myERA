@@ -46,7 +46,8 @@ export const MainPanel = () => {
       <div className="search-bar">
         <input
           type="text"
-          placeholder="Введите запрос для поиска по фамилии или имени..."
+          autoFocus
+          placeholder="Введите фамилию."
           value={searchTerm}
           onChange={handleSearchChange}
           className="search-input"

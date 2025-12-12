@@ -104,7 +104,7 @@ export const CreateNewUser = () => {
             ref={surnameRef}
             onKeyDown={(e) => handleKeyDown(e, first_nameRef)}
             type="text"
-            // autoFocus
+            autoFocus
             className="inputCard"
             name="surname"
             value={newUser.surname}

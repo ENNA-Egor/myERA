@@ -1,8 +1,8 @@
 import React, {useState} from 'react'
-import {RootState} from '../../../../Store/store'
+import {RootState} from '../../../../../Store/store'
 import { useDispatch, useSelector} from 'react-redux'
-import {toggleWorkswear } from '../../../../Store/Slice/ModalWindowSlice'
-import {addWorkWear } from '../../../../Store/Slice/WorkwearSlice'
+import {toggleWorkswear } from '../../../../../Store/Slice/ModalWindowSlice'
+import {addWorkWear } from '../../../../../Store/Slice/WorkwearSlice'
 
 
 export const WorkwearAdd =() => {

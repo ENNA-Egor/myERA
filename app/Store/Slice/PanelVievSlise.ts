@@ -10,7 +10,7 @@ interface statusTabs {
 const statusTabs = [
     {id: 1, statusTab: true, name: 'Полный список'},
     {id: 2, statusTab: false, name: 'Поиск'},
-    {id: 3, statusTab: false, name: 'Новая карточка'},
+    {id: 3, statusTab: false, name: 'Новый сотрудник'},
     {id: 4, statusTab: false, name: 'Остатки'},
     {id: 5, statusTab: false, name: 'Приход'},
     {id: 6, statusTab: false, name: 'Справочники'},
