@@ -36,11 +36,23 @@ export const ReferenceBook = () => {
             >
                 <EditIcon size={25} fill={'aqua'} />
             </button>
-            <TypesWorkswears/>
-            <Prices/>
-            <WearingPeriods/>
-            <Sizes/>
-            <Heights/>
+
+             <div id="modalMain" className="modalMainActive">
+                 <TypesWorkswears/>
+            </div>
+             {/* <div id="modalMain" className="modalMainActive">
+                 <Prices/>
+            </div>
+             <div id="modalMain" className="modalMainActive">
+                 <WearingPeriods/>
+            </div>
+             <div id="modalMain" className="modalMainActive">
+                 <Sizes/>
+            </div>
+             <div id="modalMain" className="modalMainActive">
+                 <Heights/>
+            </div>  */}
+
         </div>
     )
 }
