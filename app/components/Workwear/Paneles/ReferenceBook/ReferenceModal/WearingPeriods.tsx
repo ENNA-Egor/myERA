@@ -10,7 +10,7 @@ export const WearingPeriods = () => {
 
     return (
         <div>
-            <h3>Справочники</h3>
+            <h3>Срок носки</h3>
             <input type="Text"></input>
             <button
                 className="allBtn btnMenu editMenu"

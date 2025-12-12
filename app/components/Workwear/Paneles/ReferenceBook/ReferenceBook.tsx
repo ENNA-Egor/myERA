@@ -28,13 +28,19 @@ export const ReferenceBook = () => {
     return (
         <div>
             <h3>Справочники</h3>
-            <input type="Text"></input>
+            <input type="Text"  autoFocus>
+            </input>
             <button
                 className="allBtn btnMenu editMenu"
                 onClick={() => buttonClisk()}
             >
                 <EditIcon size={25} fill={'aqua'} />
             </button>
+            <TypesWorkswears/>
+            <Prices/>
+            <WearingPeriods/>
+            <Sizes/>
+            <Heights/>
         </div>
     )
 }

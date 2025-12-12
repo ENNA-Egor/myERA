@@ -10,7 +10,7 @@ export const Heights = () => {
 
     return (
         <div>
-            <h3>Справочники</h3>
+            <h3>Рост</h3>
             <input type="Text"></input>
             <button
                 className="allBtn btnMenu editMenu"
